@@ -1244,3 +1244,163 @@
     padding: 1rem 1.25rem;
   }
 }
+
+/* ═══════════════════════════════════════════
+   ANIMATIONS RSE
+   À coller à la fin de rse.module.css
+   ═══════════════════════════════════════════ */
+
+/* ─── État initial : éléments invisibles, légèrement décalés ─── */
+.reveal {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.7s cubic-bezier(0.22, 1, 0.36, 1),
+              transform 0.7s cubic-bezier(0.22, 1, 0.36, 1);
+  will-change: opacity, transform;
+}
+
+.revealIn {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ─── Variantes directionnelles ─── */
+.revealLeft {
+  opacity: 0;
+  transform: translateX(-40px);
+  transition: opacity 0.7s cubic-bezier(0.22, 1, 0.36, 1),
+              transform 0.7s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.revealLeft.revealIn {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.revealRight {
+  opacity: 0;
+  transform: translateX(40px);
+  transition: opacity 0.7s cubic-bezier(0.22, 1, 0.36, 1),
+              transform 0.7s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.revealRight.revealIn {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.revealZoom {
+  opacity: 0;
+  transform: scale(0.92);
+  transition: opacity 0.7s cubic-bezier(0.22, 1, 0.36, 1),
+              transform 0.7s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.revealZoom.revealIn {
+  opacity: 1;
+  transform: scale(1);
+}
+
+/* ─── Stagger : décalage progressif pour les grilles ─── */
+/* Chaque enfant d'un .stagger reçoit un délai croissant */
+.stagger > * {
+  transition-delay: 0ms;
+}
+.stagger.revealIn > *:nth-child(1)  { transition-delay: 60ms; }
+.stagger.revealIn > *:nth-child(2)  { transition-delay: 140ms; }
+.stagger.revealIn > *:nth-child(3)  { transition-delay: 220ms; }
+.stagger.revealIn > *:nth-child(4)  { transition-delay: 300ms; }
+.stagger.revealIn > *:nth-child(5)  { transition-delay: 380ms; }
+.stagger.revealIn > *:nth-child(6)  { transition-delay: 460ms; }
+.stagger.revealIn > *:nth-child(7)  { transition-delay: 540ms; }
+.stagger.revealIn > *:nth-child(8)  { transition-delay: 620ms; }
+
+/* ─── Hover renforcé sur les cartes (en plus de ce qui existe déjà) ─── */
+.pilierCard,
+.miniCard,
+.actionCard,
+.filiere,
+.processStep,
+.visionCard {
+  position: relative;
+  overflow: hidden;
+}
+
+/* Liseré bleu qui apparaît en bas au hover */
+.pilierCard::after,
+.actionCard::after,
+.filiere::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 3px;
+  background: linear-gradient(90deg, var(--bleu-vif), var(--bleu));
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.4s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.pilierCard:hover::after,
+.actionCard:hover::after,
+.filiere:hover::after {
+  transform: scaleX(1);
+}
+
+/* Légère mise en avant de l'icône au hover */
+.pilierCard:hover .pilierIcon,
+.filiere:hover .filiereIcon {
+  transform: scale(1.08) rotate(-3deg);
+  background: var(--bleu-vif);
+  color: #fff;
+  transition: transform 0.4s cubic-bezier(0.22, 1, 0.36, 1),
+              background 0.3s, color 0.3s;
+}
+
+.pilierIcon,
+.filiereIcon {
+  transition: transform 0.4s cubic-bezier(0.22, 1, 0.36, 1),
+              background 0.3s, color 0.3s;
+}
+
+/* Accentuation du processStep au hover */
+.processStep {
+  transition: box-shadow 0.3s, transform 0.3s, border-left-width 0.3s;
+}
+
+.processStep:hover {
+  transform: translateY(-3px);
+  box-shadow: var(--ombre-md);
+  border-left-width: 5px;
+}
+
+/* Pulse subtil sur le badge de certification */
+@keyframes certifPulse {
+  0%, 100% { box-shadow: 0 4px 14px rgba(26, 85, 144, 0.35); }
+  50%      { box-shadow: 0 4px 24px rgba(26, 85, 144, 0.55); }
+}
+
+.certifBadge {
+  animation: certifPulse 2.8s ease-in-out infinite;
+}
+
+/* ─── Respect des préférences utilisateur (accessibilité) ─── */
+@media (prefers-reduced-motion: reduce) {
+  .reveal,
+  .revealLeft,
+  .revealRight,
+  .revealZoom {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+
+  .stagger.revealIn > * {
+    transition-delay: 0ms;
+  }
+
+  .certifBadge {
+    animation: none;
+  }
+}
