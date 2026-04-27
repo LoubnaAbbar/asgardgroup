@@ -1,8 +1,35 @@
 "use client";
 
-import { useEffect } from "react";
+import { useEffect, useRef } from "react";
 
 export default function ExpertiseSection() {
+  const sectionRef = useRef<HTMLElement | null>(null);
+
+  // ── Effet 1 : Scroll reveal (utilise .reveal/.visible global) ───────────
+  useEffect(() => {
+    const node = sectionRef.current;
+    if (!node) return;
+
+    const targets = node.querySelectorAll<HTMLElement>(".reveal");
+    if (targets.length === 0) return;
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("visible");
+            observer.unobserve(entry.target);
+          }
+        });
+      },
+      { threshold: 0.15, rootMargin: "0px 0px -80px 0px" }
+    );
+
+    targets.forEach((t) => observer.observe(t));
+    return () => observer.disconnect();
+  }, []);
+
+  // ── Effet 2 : Switch des panneaux au clic (logique existante) ───────────
   useEffect(() => {
     const items = document.querySelectorAll<HTMLElement>(".exp-nav-item");
 
@@ -38,9 +65,9 @@ export default function ExpertiseSection() {
   }, []);
 
   return (
-    <section className="expertise" id="expertise">
-      <span className="section-label">Domaines d&apos;intervention</span>
-      <h2 className="section-title" style={{ marginBottom: "3rem" }}>
+    <section ref={sectionRef} className="expertise" id="expertise">
+      <span className="section-label reveal">Domaines d&apos;intervention</span>
+      <h2 className="section-title reveal" style={{ marginBottom: "3rem" }}>
         Notre <em>expertise</em> technique
       </h2>
 
