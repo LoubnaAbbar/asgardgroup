@@ -4,13 +4,17 @@ import { useEffect } from "react";
 
 export default function ExpertiseSection() {
   useEffect(() => {
-    const items = document.querySelectorAll(".exp-nav-item");
+    const items = document.querySelectorAll<HTMLElement>(".exp-nav-item");
 
-    const handleClick = (item) => () => {
+    const handleClick = (item: HTMLElement) => () => {
       const panel = item.getAttribute("data-panel");
 
-      document.querySelectorAll(".exp-nav-item").forEach((i) => i.classList.remove("active"));
-      document.querySelectorAll(".exp-panel").forEach((p) => p.classList.remove("active"));
+      document
+        .querySelectorAll<HTMLElement>(".exp-nav-item")
+        .forEach((i) => i.classList.remove("active"));
+      document
+        .querySelectorAll<HTMLElement>(".exp-panel")
+        .forEach((p) => p.classList.remove("active"));
 
       item.classList.add("active");
 
@@ -19,7 +23,7 @@ export default function ExpertiseSection() {
       }
     };
 
-    const handlers = [];
+    const handlers: Array<{ item: HTMLElement; handler: () => void }> = [];
     items.forEach((item) => {
       const handler = handleClick(item);
       item.addEventListener("click", handler);
