@@ -1,0 +1,84 @@
+/* ═══════════════════════════════════════════
+   FORMULAIRES RÉUTILISABLES
+   Utilisés par la section contact et potentiellement
+   d'autres formulaires simples. Le formulaire de devis
+   (.fg, .fg label, etc.) est isolé dans pages/devis.css.
+   ═══════════════════════════════════════════ */
+
+.form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+
+.form-group label {
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--texte-3);
+}
+
+.form-group input,
+.form-group textarea,
+.form-group select {
+  background: var(--fond);
+  border: 1.5px solid var(--bordure-2);
+  color: var(--texte);
+  padding: 0.75rem 1rem;
+  border-radius: var(--radius-sm);
+  font-family: var(--font-inter), sans-serif;
+  font-size: 0.9375rem;
+  outline: none;
+  transition: border-color 0.2s, background 0.2s, box-shadow 0.2s;
+  width: 100%;
+}
+
+.form-group input:focus,
+.form-group textarea:focus,
+.form-group select:focus {
+  border-color: var(--bleu-vif);
+  background: var(--blanc);
+  box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
+}
+
+.form-group textarea {
+  min-height: 120px;
+  resize: vertical;
+  line-height: 1.6;
+}
+
+.form-submit {
+  background: var(--bleu-vif);
+  color: #fff;
+  border: none;
+  padding: 0.875rem 2rem;
+  cursor: pointer;
+  border-radius: var(--radius-sm);
+  font-size: 0.9375rem;
+  font-weight: 600;
+  transition: background 0.2s, box-shadow 0.2s, transform 0.15s;
+  align-self: flex-start;
+  box-shadow: 0 2px 8px rgba(37, 99, 235, 0.25);
+}
+
+.form-submit:hover {
+  background: var(--bleu);
+  box-shadow: 0 4px 16px rgba(37, 99, 235, 0.35);
+  transform: translateY(-1px);
+}
+
+/* ═══════════════════════════════════════════
+   RESPONSIVE
+   ═══════════════════════════════════════════ */
+@media (max-width: 900px) {
+  .form-row {
+    grid-template-columns: 1fr;
+  }
+}

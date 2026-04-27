@@ -1,0 +1,50 @@
+/* ═══════════════════════════════════════════
+   BOUTONS GLOBAUX
+   .btn-primary et .btn-ghost sont utilisés dans le hero,
+   la 404 et partout où un CTA neutre est nécessaire.
+   Les boutons spécifiques (form-submit, btn-next-step, etc.)
+   sont définis dans leurs fichiers respectifs.
+   ═══════════════════════════════════════════ */
+
+.btn-primary {
+  background: var(--bleu-vif);
+  color: #fff;
+  padding: 0.8rem 1.75rem;
+  border-radius: var(--radius-sm);
+  font-weight: 600;
+  font-size: 0.9375rem;
+  text-decoration: none;
+  transition: background 0.2s, box-shadow 0.2s, transform 0.15s;
+  box-shadow: 0 2px 8px rgba(37, 99, 235, 0.3);
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  white-space: nowrap;
+}
+
+.btn-primary:hover {
+  background: var(--bleu);
+  box-shadow: 0 4px 16px rgba(37, 99, 235, 0.35);
+  transform: translateY(-1px);
+}
+
+.btn-ghost {
+  color: var(--texte-2);
+  padding: 0.8rem 1.75rem;
+  font-size: 0.9375rem;
+  font-weight: 500;
+  text-decoration: none;
+  border: 1.5px solid var(--bordure-2);
+  border-radius: var(--radius-sm);
+  transition: all 0.2s;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  white-space: nowrap;
+}
+
+.btn-ghost:hover {
+  color: var(--bleu-vif);
+  border-color: var(--bleu-vif);
+  background: var(--bleu-pale);
+}

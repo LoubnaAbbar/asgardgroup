@@ -1,0 +1,52 @@
+/* ═══════════════════════════════════════════
+   VARIABLES GLOBALES
+   Palette, typographies, rayons, espacements, ombres.
+   Toute valeur réutilisée dans plusieurs fichiers vit ici.
+   ═══════════════════════════════════════════ */
+:root {
+  /* Neutres */
+  --blanc:        #ffffff;
+  --fond:         #f7f8fa;
+  --fond-2:       #eef1f6;
+  --fond-3:       #e4e8f0;
+
+  /* Bleus de marque */
+  --bleu:         #1a4f8f;
+  --bleu-vif:     #1a5590;
+  --bleu-pale:    #dbeafe;
+  --bleu-bordure: #bfdbfe;
+
+  /* Texte */
+  --texte:   #0f172a;
+  --texte-2: #334155;
+  --texte-3: #64748b;
+  --texte-4: #94a3b8;
+
+  /* Bordures */
+  --bordure:   rgba(15, 23, 42, 0.10);
+  --bordure-2: rgba(15, 23, 42, 0.16);
+
+  /* États */
+  --succes:      #16a34a;
+  --succes-pale: #dcfce7;
+  --erreur:      #dc2626;
+  --erreur-pale: #fee2e2;
+
+  /* Ombres */
+  --ombre-sm: 0 1px 3px rgba(15,23,42,0.06), 0 1px 2px rgba(15,23,42,0.04);
+  --ombre-md: 0 4px 12px rgba(15,23,42,0.08), 0 2px 4px rgba(15,23,42,0.04);
+  --ombre-lg: 0 8px 24px rgba(15,23,42,0.10), 0 4px 8px rgba(15,23,42,0.06);
+
+  /* Typographies */
+  --font-inter:      'Inter', sans-serif;
+  --font-montserrat: 'Montserrat', sans-serif;
+
+  /* Rayons */
+  --radius-sm: 4px;
+  --radius-md: 8px;
+  --radius-lg: 12px;
+
+  /* Espacements de section */
+  --section-pad-v: 7rem;
+  --section-pad-h: 4rem;
+}

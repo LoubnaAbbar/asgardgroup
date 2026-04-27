@@ -1,0 +1,120 @@
+/* ═══════════════════════════════════════════
+   ABOUT
+   ═══════════════════════════════════════════ */
+.about {
+  background: var(--fond);
+}
+
+.about-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 5rem;
+  align-items: center;
+}
+
+.about-text p {
+  font-size: 1rem;
+  line-height: 1.8;
+  color: var(--texte-2);
+  margin-bottom: 1.1rem;
+}
+
+.about-text p strong {
+  color: var(--texte);
+  font-weight: 600;
+}
+
+.quals {
+  margin-top: 2rem;
+}
+
+.qual-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+  padding: 0.875rem 0;
+  border-bottom: 1px solid var(--bordure);
+}
+
+.qual-dot {
+  width: 6px;
+  height: 6px;
+  background: var(--bleu-vif);
+  border-radius: 50%;
+  margin-top: 0.55rem;
+  flex-shrink: 0;
+}
+
+.qual-item span {
+  font-size: 0.9375rem;
+  line-height: 1.6;
+  color: var(--texte-2);
+}
+
+.about-visual {
+  background: var(--blanc);
+  border: 1px solid var(--bordure);
+  border-radius: var(--radius-lg);
+  padding: 2.5rem;
+  box-shadow: var(--ombre-md);
+}
+
+/* ─── Chart CA ─── */
+.ca-chart h4 {
+  font-size: 0.6875rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--texte-3);
+  font-weight: 600;
+  margin-bottom: 2rem;
+}
+
+.ca-bar {
+  margin-bottom: 1.5rem;
+}
+
+.ca-bar-label {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 0.5rem;
+}
+
+.ca-bar-label span:first-child {
+  font-size: 0.875rem;
+  color: var(--texte-2);
+  font-weight: 500;
+}
+
+.ca-bar-label span:last-child {
+  font-weight: 700;
+  color: var(--bleu-vif);
+}
+
+.ca-track {
+  height: 4px;
+  background: var(--fond-2);
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.ca-fill {
+  height: 100%;
+  border-radius: 4px;
+  background: linear-gradient(90deg, var(--bleu) 0%, var(--bleu-vif) 100%);
+}
+
+/* ═══════════════════════════════════════════
+   RESPONSIVE
+   ═══════════════════════════════════════════ */
+@media (max-width: 1024px) {
+  .about-grid {
+    gap: 3rem;
+  }
+}
+
+@media (max-width: 900px) {
+  .about-grid {
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+  }
+}

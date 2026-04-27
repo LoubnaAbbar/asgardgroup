@@ -1,0 +1,27 @@
+/* ═══════════════════════════════════════════
+   RESPONSIVE TRANSVERSE
+   Ajuste les variables globales (espacements de section, etc.)
+   par breakpoint. Les règles responsive spécifiques à chaque
+   section vivent dans leurs fichiers respectifs.
+   ═══════════════════════════════════════════ */
+
+@media (max-width: 1024px) {
+  :root {
+    --section-pad-v: 5.5rem;
+    --section-pad-h: 2.5rem;
+  }
+}
+
+@media (max-width: 900px) {
+  :root {
+    --section-pad-v: 4.5rem;
+    --section-pad-h: 1.5rem;
+  }
+}
+
+@media (max-width: 640px) {
+  :root {
+    --section-pad-v: 3.5rem;
+    --section-pad-h: 1rem;
+  }
+}

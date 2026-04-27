@@ -1,0 +1,64 @@
+/* ═══════════════════════════════════════════
+   STATS BAR
+   ═══════════════════════════════════════════ */
+.stats-bar {
+  background: var(--blanc);
+  border-top: 1px solid var(--bordure);
+  border-bottom: 1px solid var(--bordure);
+  padding: 2.5rem var(--section-pad-h);
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.5rem;
+  position: relative;
+  z-index: 1;
+}
+
+.stat {
+  text-align: center;
+}
+
+.stat-val {
+  font-family: var(--font-montserrat), sans-serif;
+  font-size: clamp(1.75rem, 3vw, 2.25rem);
+  font-weight: 800;
+  line-height: 1;
+  margin-bottom: 0.35rem;
+  color: var(--bleu-vif);
+  letter-spacing: -0.02em;
+}
+
+.stat-label {
+  font-size: 0.8125rem;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--texte-3);
+  font-weight: 500;
+}
+
+/* ═══════════════════════════════════════════
+   RESPONSIVE
+   ═══════════════════════════════════════════ */
+@media (max-width: 900px) {
+  .stats-bar {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+  }
+}
+
+@media (max-width: 640px) {
+  .stats-bar {
+    grid-template-columns: repeat(2, 1fr);
+    padding: 2rem 1rem;
+    gap: 1rem;
+  }
+
+  .stat-val {
+    font-size: 1.75rem;
+  }
+}
+
+@media (max-width: 380px) {
+  .stats-bar {
+    grid-template-columns: 1fr 1fr;
+  }
+}

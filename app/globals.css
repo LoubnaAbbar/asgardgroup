@@ -1,26 +1,36 @@
-@import "tailwindcss";
+@import url('https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700;14..32,800;14..32,900&family=Montserrat:wght@300;400;500;600;700;800;900&display=swap');
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
+/* ═══════════════════════════════════════════
+   IMPORTS DES STYLES DÉCOUPÉS
+   L'ordre compte : base → composants → sections → pages → responsive
+   ═══════════════════════════════════════════ */
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
+/* Base */
+@import "../styles/base/variables.css";
+@import "../styles/base/reset.css";
+@import "../styles/base/typography.css";
+@import "../styles/base/animations.css";
+@import "../styles/base/utilities.css";
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
-}
+/* Composants réutilisables */
+@import "../styles/components/buttons.css";
+@import "../styles/components/forms.css";
+@import "../styles/components/header.css";
+@import "../styles/components/footer.css";
+@import "../styles/components/scroll-to-top.css";
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
-}
+/* Sections de la page d'accueil */
+@import "../styles/sections/hero.css";
+@import "../styles/sections/stats-bar.css";
+@import "../styles/sections/about.css";
+@import "../styles/sections/services.css";
+@import "../styles/sections/expertise.css";
+@import "../styles/sections/references.css";
+@import "../styles/sections/contact.css";
+
+/* Pages dédiées */
+@import "../styles/pages/devis.css";
+@import "../styles/pages/page-404.css";
+
+/* Responsive global */
+@import "../styles/base/responsive.css";

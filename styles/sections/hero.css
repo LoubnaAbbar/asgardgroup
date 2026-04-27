@@ -1,0 +1,147 @@
+/* ═══════════════════════════════════════════
+   HERO
+   ═══════════════════════════════════════════ */
+.hero {
+  position: relative;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding: 9rem var(--section-pad-h) 6rem;
+  overflow: hidden;
+  background: var(--blanc);
+}
+
+.hero::before {
+  display: none !important;
+}
+
+.hero::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  width: 40%;
+  background: linear-gradient(135deg, transparent 0%, var(--bleu-pale) 100%);
+  opacity: 0.10;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.hero-orb,
+.hero-ring,
+.hero-year {
+  display: none;
+}
+
+.hero > div {
+  position: relative;
+  z-index: 1;
+}
+
+.hero-tag {
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--bleu-vif);
+  margin-bottom: 1.25rem;
+  opacity: 0;
+  animation: fadeUp 0.6s ease forwards 0.1s;
+  display: flex;
+  align-items: center;
+  gap: 0.7rem;
+}
+
+.hero-tag::before {
+  content: "";
+  display: inline-block;
+  width: 24px;
+  height: 2px;
+  background: var(--bleu-vif);
+  border-radius: 2px;
+  flex-shrink: 0;
+}
+
+.hero h1 {
+  font-family: var(--font-montserrat), sans-serif;
+  font-size: clamp(2rem, 5.5vw, 5rem);
+  font-weight: 900;
+  line-height: 1.06;
+  letter-spacing: -0.03em;
+  color: var(--texte);
+  margin-bottom: 1.5rem;
+  opacity: 0;
+  animation: fadeUp 0.6s ease forwards 0.25s;
+}
+
+.hero h1 em {
+  color: var(--bleu-vif);
+  font-style: normal;
+}
+
+.hero-desc {
+  max-width: 520px;
+  font-size: clamp(0.9375rem, 2vw, 1.0625rem);
+  line-height: 1.75;
+  color: var(--texte-2);
+  margin-bottom: 2.25rem;
+  opacity: 0;
+  animation: fadeUp 0.6s ease forwards 0.4s;
+}
+
+.hero-actions {
+  display: flex;
+  gap: 0.875rem;
+  align-items: center;
+  flex-wrap: wrap;
+  opacity: 0;
+  animation: fadeUp 0.6s ease forwards 0.55s;
+}
+
+/* ═══════════════════════════════════════════
+   RESPONSIVE
+   ═══════════════════════════════════════════ */
+@media (max-width: 900px) {
+  .hero {
+    padding: 8rem 1.5rem 4.5rem;
+    min-height: auto;
+    padding-top: calc(68px + 3.5rem);
+  }
+
+  .hero::after {
+    display: none;
+  }
+}
+
+@media (max-width: 640px) {
+  .hero {
+    padding: calc(68px + 2.5rem) 1rem 3.5rem;
+  }
+
+  .hero h1 {
+    font-size: clamp(1.75rem, 8vw, 2.75rem);
+  }
+
+  .hero-desc {
+    font-size: 0.9375rem;
+  }
+
+  .hero-actions {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .hero-actions .btn-primary,
+  .hero-actions .btn-ghost {
+    width: 100%;
+    justify-content: center;
+  }
+}
+
+@media (max-width: 380px) {
+  .hero-actions {
+    gap: 0.625rem;
+  }
+}

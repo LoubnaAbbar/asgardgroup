@@ -1,0 +1,67 @@
+/* ═══════════════════════════════════════════
+   ANIMATIONS GLOBALES (keyframes réutilisés)
+   ═══════════════════════════════════════════ */
+
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(16px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+@keyframes dotPulse {
+  0%, 100% { opacity: 0.3; transform: scale(0.8); }
+  50%      { opacity: 1;   transform: scale(1); }
+}
+
+@keyframes progressBar {
+  from { transform: scaleX(0); }
+  to   { transform: scaleX(1); }
+}
+
+/* Dot trail utilisé sur l'écran de succès du devis */
+.dot-trail {
+  display: flex;
+  gap: 5px;
+  margin-top: 1.5rem;
+}
+
+.dot-trail span {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--bleu-vif);
+  animation: dotPulse 2s ease-in-out infinite;
+}
+
+.dot-trail span:nth-child(2) { animation-delay: 0.15s; opacity: 0.8; }
+.dot-trail span:nth-child(3) { animation-delay: 0.30s; opacity: 0.6; }
+.dot-trail span:nth-child(4) { animation-delay: 0.45s; width: 4px; height: 4px; opacity: 0.4; }
+.dot-trail span:nth-child(5) { animation-delay: 0.60s; width: 3px; height: 3px; opacity: 0.25; }
+
+/* Reveal au scroll (JS ajoute .visible) */
+.reveal {
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity 0.65s ease, transform 0.65s ease;
+}
+
+.reveal.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ═══════════════════════════════════════════
+   ACCESSIBILITÉ — RÉDUCTION DE MOUVEMENT
+   ═══════════════════════════════════════════ */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-delay: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+  }
+}

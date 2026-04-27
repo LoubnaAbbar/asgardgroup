@@ -1,0 +1,48 @@
+/* ═══════════════════════════════════════════
+   TYPOGRAPHIE PARTAGÉE
+   Classes utilisées dans plusieurs sections pour harmoniser
+   les titres, labels et mises en page.
+   ═══════════════════════════════════════════ */
+
+section {
+  padding: var(--section-pad-v) var(--section-pad-h);
+  position: relative;
+  z-index: 1;
+}
+
+.section-label {
+  font-size: 0.6875rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--bleu-vif);
+  font-weight: 600;
+  margin-bottom: 0.875rem;
+  display: flex;
+  align-items: center;
+  gap: 0.7rem;
+}
+
+.section-label::before {
+  content: "";
+  display: inline-block;
+  width: 20px;
+  height: 2px;
+  background: var(--bleu-vif);
+  border-radius: 2px;
+  flex-shrink: 0;
+}
+
+.section-title {
+  font-family: var(--font-montserrat), sans-serif;
+  font-size: clamp(1.6rem, 3.2vw, 2.6rem);
+  font-weight: 800;
+  line-height: 1.12;
+  letter-spacing: -0.02em;
+  color: var(--texte);
+  margin-bottom: 1.25rem;
+}
+
+.section-title em {
+  color: var(--bleu-vif);
+  font-style: normal;
+}

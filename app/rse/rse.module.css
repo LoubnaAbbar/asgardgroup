@@ -1,0 +1,1246 @@
+/* ═══════════════════════════════════════════
+   PAGE RSE — CSS MODULE
+   Aligné sur la DA du site : variables CSS globales,
+   Montserrat pour les titres, accents bleu vif.
+   ═══════════════════════════════════════════ */
+
+.rse {
+  background: var(--fond);
+  color: var(--texte);
+  font-family: var(--font-inter), sans-serif;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 var(--section-pad-h);
+}
+
+/* ═══════════════════════════════════════════
+   HERO
+   ═══════════════════════════════════════════ */
+.hero {
+  position: relative;
+  padding: calc(84px + 5rem) var(--section-pad-h) 5rem;
+  background: var(--blanc);
+  overflow: hidden;
+  border-bottom: 1px solid var(--bordure);
+}
+
+.hero::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  width: 40%;
+  background: linear-gradient(135deg, transparent 0%, var(--bleu-pale) 100%);
+  opacity: 0.10;
+  pointer-events: none;
+}
+
+.heroInner {
+  max-width: 1200px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 1;
+}
+
+.tag {
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--bleu-vif);
+  margin-bottom: 1.25rem;
+  display: flex;
+  align-items: center;
+  gap: 0.7rem;
+}
+
+.tag::before {
+  content: "";
+  display: inline-block;
+  width: 24px;
+  height: 2px;
+  background: var(--bleu-vif);
+  border-radius: 2px;
+}
+
+.hero h1 {
+  font-family: var(--font-montserrat), sans-serif;
+  font-size: clamp(2rem, 5vw, 4rem);
+  font-weight: 900;
+  line-height: 1.06;
+  letter-spacing: -0.03em;
+  color: var(--texte);
+  margin: 0 0 1.5rem 0;
+}
+
+.hero h1 em {
+  color: var(--bleu-vif);
+  font-style: normal;
+}
+
+.heroDesc {
+  max-width: 720px;
+  font-size: clamp(0.9375rem, 2vw, 1.0625rem);
+  line-height: 1.75;
+  color: var(--texte-2);
+  margin: 0;
+}
+
+/* ═══════════════════════════════════════════
+   EN-TÊTES DE SECTION (réutilisable)
+   ═══════════════════════════════════════════ */
+.sectionHeader {
+  max-width: 720px;
+  margin-bottom: 3rem;
+}
+
+.sectionLabel {
+  font-size: 0.6875rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--bleu-vif);
+  font-weight: 600;
+  margin-bottom: 0.875rem;
+  display: flex;
+  align-items: center;
+  gap: 0.7rem;
+}
+
+.sectionLabel::before {
+  content: "";
+  display: inline-block;
+  width: 20px;
+  height: 2px;
+  background: var(--bleu-vif);
+  border-radius: 2px;
+}
+
+.sectionTitle {
+  font-family: var(--font-montserrat), sans-serif;
+  font-size: clamp(1.6rem, 3.2vw, 2.6rem);
+  font-weight: 800;
+  line-height: 1.12;
+  letter-spacing: -0.02em;
+  color: var(--texte);
+  margin: 0 0 1.25rem 0;
+}
+
+.sectionTitle em {
+  color: var(--bleu-vif);
+  font-style: normal;
+}
+
+.sectionIntro {
+  font-size: 1rem;
+  line-height: 1.8;
+  color: var(--texte-2);
+  margin: 0;
+}
+
+/* ═══════════════════════════════════════════
+   PILIERS — 3 CARTES D'ENTRÉE
+   ═══════════════════════════════════════════ */
+.piliers {
+  padding: var(--section-pad-v) 0;
+  background: var(--fond);
+}
+
+.piliersGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+}
+
+.pilierCard {
+  background: var(--blanc);
+  padding: 2rem 1.75rem;
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--bordure);
+  box-shadow: var(--ombre-sm);
+  transition: box-shadow 0.25s, transform 0.25s, border-color 0.25s;
+  text-decoration: none;
+  color: inherit;
+  display: flex;
+  flex-direction: column;
+}
+
+.pilierCard:hover {
+  box-shadow: var(--ombre-lg);
+  transform: translateY(-3px);
+  border-color: var(--bleu-bordure);
+}
+
+.pilierIcon {
+  width: 56px;
+  height: 56px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--bleu-pale);
+  color: var(--bleu-vif);
+  border-radius: var(--radius-md);
+  margin-bottom: 1.5rem;
+}
+
+.pilierCard h3 {
+  font-family: var(--font-montserrat), sans-serif;
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--texte);
+  margin: 0 0 0.75rem 0;
+  letter-spacing: -0.01em;
+}
+
+.pilierCard p {
+  font-size: 0.9375rem;
+  line-height: 1.7;
+  color: var(--texte-2);
+  margin: 0 0 1.5rem 0;
+  flex: 1;
+}
+
+.pilierArrow {
+  font-size: 0.8125rem;
+  font-weight: 600;
+  color: var(--bleu-vif);
+  letter-spacing: 0.02em;
+  transition: transform 0.2s;
+}
+
+.pilierCard:hover .pilierArrow {
+  transform: translateX(4px);
+}
+
+/* ═══════════════════════════════════════════
+   CHIFFRES CLÉS
+   ═══════════════════════════════════════════ */
+.chiffres {
+  background: var(--blanc);
+  padding: 3rem var(--section-pad-h);
+  border-top: 1px solid var(--bordure);
+  border-bottom: 1px solid var(--bordure);
+}
+
+.chiffresGrid {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 2rem;
+}
+
+.chiffreItem {
+  text-align: center;
+  padding: 0 1rem;
+  border-right: 1px solid var(--bordure);
+}
+
+.chiffreItem:last-child {
+  border-right: none;
+}
+
+.chiffreVal {
+  font-family: var(--font-montserrat), sans-serif;
+  font-size: clamp(2rem, 3.5vw, 2.75rem);
+  font-weight: 900;
+  line-height: 1;
+  color: var(--bleu-vif);
+  letter-spacing: -0.02em;
+  margin-bottom: 0.5rem;
+}
+
+.chiffreLabel {
+  font-size: 0.8125rem;
+  color: var(--texte-3);
+  letter-spacing: 0.02em;
+  line-height: 1.4;
+  font-weight: 500;
+}
+
+/* ═══════════════════════════════════════════
+   BLOCS PRINCIPAUX (piliers détaillés)
+   ═══════════════════════════════════════════ */
+.bloc {
+  padding: var(--section-pad-v) 0;
+}
+
+.blocAlt {
+  background: var(--blanc);
+}
+
+.blocHeader {
+  display: flex;
+  align-items: flex-start;
+  gap: 1.5rem;
+  margin-bottom: 3rem;
+  padding-bottom: 2rem;
+  border-bottom: 1px solid var(--bordure);
+}
+
+.blocNum {
+  font-family: var(--font-montserrat), sans-serif;
+  font-size: clamp(2.5rem, 5vw, 4rem);
+  font-weight: 900;
+  line-height: 1;
+  color: var(--bleu-pale);
+  letter-spacing: -0.04em;
+  flex-shrink: 0;
+}
+
+.blocIntro {
+  font-size: 1.0625rem;
+  line-height: 1.75;
+  color: var(--texte-2);
+  max-width: 820px;
+  margin-bottom: 2.5rem;
+}
+
+/* ─── Sous-blocs à l'intérieur d'un pilier ─── */
+.subBloc {
+  margin-top: 3rem;
+  padding-top: 2.5rem;
+  border-top: 1px solid var(--bordure);
+}
+
+.subBloc:first-of-type {
+  margin-top: 2rem;
+  padding-top: 0;
+  border-top: none;
+}
+
+.subBlocHeader {
+  display: flex;
+  align-items: baseline;
+  gap: 1rem;
+  margin-bottom: 1.25rem;
+}
+
+.subBlocNum {
+  font-family: var(--font-montserrat), sans-serif;
+  font-size: 0.875rem;
+  font-weight: 700;
+  color: var(--bleu-vif);
+  letter-spacing: 0.1em;
+}
+
+.subBlocHeader h3 {
+  font-family: var(--font-montserrat), sans-serif;
+  font-size: 1.5rem;
+  font-weight: 800;
+  color: var(--texte);
+  margin: 0;
+  letter-spacing: -0.02em;
+  line-height: 1.2;
+}
+
+.subBlocDesc {
+  font-size: 1rem;
+  line-height: 1.75;
+  color: var(--texte-2);
+  margin: 0 0 2rem 0;
+  max-width: 820px;
+}
+
+.subBlocDesc strong {
+  color: var(--texte);
+  font-weight: 600;
+}
+
+/* ═══════════════════════════════════════════
+   DUAL CARD (2 colonnes côte à côte)
+   ═══════════════════════════════════════════ */
+.dualCard {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.5rem;
+  background: var(--blanc);
+  border: 1px solid var(--bordure);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--ombre-md);
+  padding: 2.25rem 2.5rem;
+  margin-bottom: 2rem;
+}
+
+.blocAlt .dualCard {
+  background: var(--fond);
+}
+
+.dualCardCol:first-child {
+  border-right: 1px solid var(--bordure);
+  padding-right: 2rem;
+}
+
+.dualCardCol:last-child {
+  padding-left: 0;
+}
+
+.dualCardTitle {
+  font-family: var(--font-montserrat), sans-serif;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--bleu-vif);
+  margin: 0 0 1.25rem 0;
+}
+
+.checkList {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.checkList li {
+  position: relative;
+  padding-left: 1.75rem;
+  font-size: 0.9375rem;
+  line-height: 1.6;
+  color: var(--texte-2);
+}
+
+.checkList li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0.45rem;
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  background: var(--bleu-pale);
+  border: 2px solid var(--bleu-vif);
+}
+
+.checkList li::after {
+  content: "";
+  position: absolute;
+  left: 4px;
+  top: 0.75rem;
+  width: 6px;
+  height: 3px;
+  border-left: 2px solid var(--bleu-vif);
+  border-bottom: 2px solid var(--bleu-vif);
+  transform: rotate(-45deg);
+}
+
+/* ═══════════════════════════════════════════
+   MINI CARDS (grille de petits blocs)
+   ═══════════════════════════════════════════ */
+.miniCards {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1rem;
+}
+
+.miniCard {
+  background: var(--fond);
+  border: 1px solid var(--bordure);
+  border-radius: var(--radius-md);
+  padding: 1.25rem 1.25rem;
+  transition: border-color 0.2s, background 0.2s;
+}
+
+.blocAlt .miniCard {
+  background: var(--blanc);
+}
+
+.miniCard:hover {
+  border-color: var(--bleu-bordure);
+  background: var(--bleu-pale);
+}
+
+.miniCard strong {
+  display: block;
+  font-family: var(--font-montserrat), sans-serif;
+  font-size: 0.9375rem;
+  font-weight: 700;
+  color: var(--texte);
+  margin-bottom: 0.4rem;
+  letter-spacing: -0.01em;
+}
+
+.miniCard span {
+  display: block;
+  font-size: 0.875rem;
+  line-height: 1.55;
+  color: var(--texte-2);
+}
+
+/* ═══════════════════════════════════════════
+   FILIÈRES (3 filières de valorisation)
+   ═══════════════════════════════════════════ */
+.filieresTitre,
+.processTitre,
+.miniTitre {
+  font-family: var(--font-montserrat), sans-serif;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--texte-3);
+  margin: 2rem 0 1.25rem 0;
+}
+
+.filieres {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+
+.filiere {
+  background: var(--blanc);
+  border: 1px solid var(--bordure);
+  border-radius: var(--radius-md);
+  padding: 1.5rem;
+  box-shadow: var(--ombre-sm);
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  text-align: center;
+  align-items: center;
+  transition: box-shadow 0.25s, transform 0.25s, border-color 0.25s;
+}
+
+.blocAlt .filiere {
+  background: var(--fond);
+}
+
+.filiere:hover {
+  transform: translateY(-2px);
+  border-color: var(--bleu-bordure);
+  box-shadow: var(--ombre-md);
+}
+
+.filiereIcon {
+  width: 48px;
+  height: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--bleu-pale);
+  color: var(--bleu-vif);
+  border-radius: 50%;
+  font-size: 1.25rem;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+}
+
+.filiere strong {
+  font-family: var(--font-montserrat), sans-serif;
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--texte);
+  letter-spacing: -0.01em;
+}
+
+.filiere span {
+  font-size: 0.875rem;
+  line-height: 1.6;
+  color: var(--texte-2);
+}
+
+/* ═══════════════════════════════════════════
+   PROCESS (3 étapes Audit → Stock → Réemploi)
+   ═══════════════════════════════════════════ */
+.process {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+  position: relative;
+}
+
+.processStep {
+  background: var(--blanc);
+  border: 1px solid var(--bordure);
+  border-left: 3px solid var(--bleu-vif);
+  border-radius: var(--radius-md);
+  padding: 1.5rem 1.75rem;
+  box-shadow: var(--ombre-sm);
+}
+
+.blocAlt .processStep {
+  background: var(--fond);
+}
+
+.processStepNum {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background: var(--bleu-vif);
+  color: #fff;
+  font-family: var(--font-montserrat), sans-serif;
+  font-size: 0.875rem;
+  font-weight: 800;
+  margin-bottom: 1rem;
+}
+
+.processStep h5 {
+  font-family: var(--font-montserrat), sans-serif;
+  font-size: 1.0625rem;
+  font-weight: 700;
+  color: var(--texte);
+  margin: 0 0 0.75rem 0;
+  letter-spacing: -0.01em;
+  text-transform: uppercase;
+}
+
+.processStep ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.processStep ul li {
+  position: relative;
+  padding-left: 1rem;
+  margin-bottom: 0.5rem;
+  font-size: 0.875rem;
+  line-height: 1.55;
+  color: var(--texte-2);
+}
+
+.processStep ul li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0.6rem;
+  width: 4px;
+  height: 4px;
+  border-radius: 50%;
+  background: var(--bleu-vif);
+}
+
+/* ═══════════════════════════════════════════
+   CERTIFICATION (bandeau mis en avant)
+   ═══════════════════════════════════════════ */
+.certifBanner {
+  background: linear-gradient(135deg, var(--bleu-pale) 0%, rgba(191, 219, 254, 0.4) 100%);
+  border: 1px solid var(--bleu-bordure);
+  border-radius: var(--radius-lg);
+  padding: 2rem 2.25rem;
+  display: flex;
+  align-items: flex-start;
+  gap: 1.5rem;
+  margin-bottom: 3rem;
+}
+
+.certifBadge {
+  width: 64px;
+  height: 64px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--bleu-vif);
+  color: #fff;
+  border-radius: 50%;
+  flex-shrink: 0;
+  box-shadow: 0 4px 14px rgba(26, 85, 144, 0.35);
+}
+
+.certifTitre {
+  font-family: var(--font-montserrat), sans-serif;
+  font-size: 1.25rem;
+  font-weight: 800;
+  color: var(--bleu);
+  margin-bottom: 0.5rem;
+  letter-spacing: -0.01em;
+}
+
+.certifDesc {
+  font-size: 0.9375rem;
+  line-height: 1.7;
+  color: var(--texte-2);
+  margin: 0;
+}
+
+.certifDesc strong {
+  color: var(--texte);
+  font-weight: 600;
+}
+
+/* ═══════════════════════════════════════════
+   ACTIONS GRID (grille de 3 cartes d'actions)
+   ═══════════════════════════════════════════ */
+.actionsGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+.actionCard {
+  background: var(--blanc);
+  border: 1px solid var(--bordure);
+  border-radius: var(--radius-md);
+  padding: 1.5rem 1.5rem;
+  box-shadow: var(--ombre-sm);
+  transition: box-shadow 0.25s, transform 0.25s, border-color 0.25s;
+}
+
+.blocAlt .actionCard {
+  background: var(--fond);
+}
+
+.actionCard:hover {
+  box-shadow: var(--ombre-md);
+  transform: translateY(-2px);
+  border-color: var(--bleu-bordure);
+}
+
+.actionCard strong {
+  display: block;
+  font-family: var(--font-montserrat), sans-serif;
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--bleu-vif);
+  margin-bottom: 0.5rem;
+  letter-spacing: -0.01em;
+}
+
+.actionCard span {
+  display: block;
+  font-size: 0.9rem;
+  line-height: 1.65;
+  color: var(--texte-2);
+}
+
+/* ═══════════════════════════════════════════
+   VISION / OBJECTIF (2 encarts)
+   ═══════════════════════════════════════════ */
+.visionGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+  margin: 1.5rem 0;
+}
+
+.visionCard {
+  background: var(--blanc);
+  border: 1px solid var(--bordure);
+  border-left: 3px solid var(--bleu-vif);
+  border-radius: var(--radius-md);
+  padding: 1.5rem 1.75rem;
+  box-shadow: var(--ombre-sm);
+}
+
+.blocAlt .visionCard {
+  background: var(--fond);
+}
+
+.visionLabel {
+  font-size: 0.6875rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--bleu-vif);
+  margin-bottom: 0.75rem;
+}
+
+.visionCard p {
+  font-size: 0.9375rem;
+  line-height: 1.7;
+  color: var(--texte-2);
+  margin: 0;
+}
+
+/* ═══════════════════════════════════════════
+   ENGAGEMENT CARD (200h d'insertion)
+   ═══════════════════════════════════════════ */
+.engagementCard {
+  background: var(--blanc);
+  border: 1px solid var(--bleu-bordure);
+  border-radius: var(--radius-lg);
+  padding: 2rem 2.25rem;
+  box-shadow: var(--ombre-md);
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  margin-bottom: 2.5rem;
+}
+
+.blocAlt .engagementCard {
+  background: var(--fond);
+}
+
+.engagementNum {
+  font-family: var(--font-montserrat), sans-serif;
+  font-size: clamp(2.5rem, 5vw, 3.5rem);
+  font-weight: 900;
+  line-height: 1;
+  color: var(--bleu-vif);
+  letter-spacing: -0.03em;
+  flex-shrink: 0;
+}
+
+.engagementLabel {
+  font-family: var(--font-montserrat), sans-serif;
+  font-size: 1.125rem;
+  font-weight: 700;
+  color: var(--texte);
+  margin-bottom: 0.5rem;
+  letter-spacing: -0.01em;
+}
+
+.engagementCard p {
+  font-size: 0.9375rem;
+  line-height: 1.7;
+  color: var(--texte-2);
+  margin: 0;
+}
+
+/* ═══════════════════════════════════════════
+   PUBLICS CONCERNÉS (grille de tags)
+   ═══════════════════════════════════════════ */
+.publics {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 0.75rem;
+}
+
+.publicItem {
+  background: var(--blanc);
+  border: 1px solid var(--bordure);
+  border-left: 3px solid var(--bleu-vif);
+  border-radius: var(--radius-sm);
+  padding: 0.875rem 1.25rem;
+  font-size: 0.9375rem;
+  color: var(--texte-2);
+  line-height: 1.5;
+  transition: background 0.2s, border-color 0.2s;
+}
+
+.blocAlt .publicItem {
+  background: var(--fond);
+}
+
+.publicItem:hover {
+  background: var(--bleu-pale);
+  border-color: var(--bleu-vif);
+}
+
+/* ═══════════════════════════════════════════
+   CTA FINAL
+   ═══════════════════════════════════════════ */
+.cta {
+  background: linear-gradient(135deg, var(--bleu) 0%, var(--bleu-vif) 100%);
+  padding: var(--section-pad-v) var(--section-pad-h);
+  text-align: center;
+  color: #fff;
+}
+
+.ctaInner {
+  max-width: 720px;
+  margin: 0 auto;
+}
+
+.cta h2 {
+  font-family: var(--font-montserrat), sans-serif;
+  font-size: clamp(1.6rem, 3.2vw, 2.5rem);
+  font-weight: 900;
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+  color: #fff;
+  margin: 0 0 1.25rem 0;
+}
+
+.cta h2 em {
+  color: var(--bleu-pale);
+  font-style: normal;
+}
+
+.cta p {
+  font-size: 1.0625rem;
+  line-height: 1.7;
+  color: rgba(255, 255, 255, 0.85);
+  margin: 0 0 2.25rem 0;
+}
+
+.ctaActions {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+/* Le CTA a un fond bleu, donc le .btn-ghost global ne fonctionne pas bien.
+   On force une variante claire pour ce contexte spécifique. */
+.ctaActions :global(.btn-ghost) {
+  color: #fff;
+  border-color: rgba(255, 255, 255, 0.45);
+  background: transparent;
+}
+
+.ctaActions :global(.btn-ghost:hover) {
+  color: var(--bleu);
+  background: #fff;
+  border-color: #fff;
+}
+
+.ctaActions :global(.btn-primary) {
+  background: #fff;
+  color: var(--bleu-vif);
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.15);
+}
+
+.ctaActions :global(.btn-primary:hover) {
+  background: var(--bleu-pale);
+  color: var(--bleu);
+}
+
+/* ═══════════════════════════════════════════
+   RESPONSIVE
+   ═══════════════════════════════════════════ */
+@media (max-width: 1024px) {
+  .piliersGrid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .chiffresGrid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2.5rem 2rem;
+  }
+
+  .chiffreItem:nth-child(2) {
+    border-right: none;
+  }
+
+  .miniCards {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .actionsGrid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 900px) {
+  .hero {
+    padding: calc(72px + 3.5rem) 1.5rem 3.5rem;
+  }
+
+  .piliersGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .dualCard {
+    grid-template-columns: 1fr;
+    padding: 1.75rem;
+  }
+
+  .dualCardCol:first-child {
+    border-right: none;
+    border-bottom: 1px solid var(--bordure);
+    padding-right: 0;
+    padding-bottom: 1.5rem;
+  }
+
+  .dualCardCol:last-child {
+    padding-left: 0;
+    padding-top: 1.5rem;
+  }
+
+  .filieres,
+  .process {
+    grid-template-columns: 1fr;
+  }
+
+  .visionGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .blocHeader {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  .engagementCard {
+    flex-direction: column;
+    text-align: center;
+    gap: 1rem;
+  }
+
+  .publics {
+    grid-template-columns: 1fr;
+  }
+
+  .certifBanner {
+    flex-direction: column;
+    text-align: center;
+    gap: 1rem;
+    padding: 1.75rem;
+  }
+}
+
+@media (max-width: 640px) {
+  .hero {
+    padding: calc(72px + 2.5rem) 1rem 3rem;
+  }
+
+  .chiffresGrid {
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem 1rem;
+  }
+
+  .chiffreItem {
+    border-right: 1px solid var(--bordure);
+  }
+
+  .chiffreItem:nth-child(even) {
+    border-right: none;
+  }
+
+  .miniCards {
+    grid-template-columns: 1fr;
+  }
+
+  .actionsGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .dualCard,
+  .processStep,
+  .visionCard,
+  .certifBanner,
+  .engagementCard {
+    padding: 1.5rem;
+  }
+
+  .ctaActions {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .ctaActions :global(.btn-primary),
+  .ctaActions :global(.btn-ghost) {
+    width: 100%;
+    justify-content: center;
+  }
+}
+
+/* ═══════════════════════════════════════════
+   AJOUTS POUR LES SOUS-PAGES RSE
+   À coller à la fin de rse.module.css existant.
+   ═══════════════════════════════════════════ */
+
+/* ─── Fil d'Ariane ─── */
+.breadcrumbBar {
+  padding: calc(84px + 1.5rem) var(--section-pad-h) 0;
+  background: var(--fond);
+}
+
+.breadcrumb {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  font-size: 0.8125rem;
+  font-weight: 500;
+  color: var(--texte-3);
+}
+
+.breadcrumb a {
+  color: var(--texte-3);
+  text-decoration: none;
+  transition: color 0.2s;
+}
+
+.breadcrumb a:hover {
+  color: var(--bleu-vif);
+}
+
+.breadcrumb span:not(.breadcrumbSep) {
+  color: var(--texte);
+  font-weight: 600;
+}
+
+.breadcrumbSep {
+  color: var(--texte-4);
+  font-weight: 400;
+}
+
+/* ─── Hero des sous-pages ─── */
+.subHero {
+  padding: 2rem var(--section-pad-h) 4rem;
+  background: var(--fond);
+  position: relative;
+  overflow: hidden;
+}
+
+.subHero::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  width: 35%;
+  background: linear-gradient(135deg, transparent 0%, var(--bleu-pale) 100%);
+  opacity: 0.14;
+  pointer-events: none;
+}
+
+.subHero .container {
+  position: relative;
+  z-index: 1;
+}
+
+.subHeroBadge {
+  display: inline-block;
+  font-family: var(--font-montserrat), sans-serif;
+  font-size: 0.6875rem;
+  font-weight: 800;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--bleu-vif);
+  background: var(--bleu-pale);
+  border: 1px solid var(--bleu-bordure);
+  padding: 0.35rem 0.75rem;
+  border-radius: var(--radius-sm);
+  margin-bottom: 1.25rem;
+}
+
+.subHero h1 {
+  font-family: var(--font-montserrat), sans-serif;
+  font-size: clamp(1.75rem, 4.5vw, 3.25rem);
+  font-weight: 900;
+  line-height: 1.06;
+  letter-spacing: -0.03em;
+  color: var(--texte);
+  margin: 0 0 1.25rem 0;
+  max-width: 720px;
+}
+
+.subHero h1 em {
+  color: var(--bleu-vif);
+  font-style: normal;
+}
+
+/* ─── Navigation entre piliers (en bas de chaque sous-page) ─── */
+.pilierNav {
+  padding: 3rem var(--section-pad-h) var(--section-pad-v);
+  background: var(--fond);
+  border-top: 1px solid var(--bordure);
+}
+
+.pilierNavGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+}
+
+.pilierNavBack,
+.pilierNavNext {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 1.25rem 1.5rem;
+  background: var(--blanc);
+  border: 1px solid var(--bordure);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--ombre-sm);
+  text-decoration: none;
+  color: var(--texte);
+  transition: box-shadow 0.25s, transform 0.25s, border-color 0.25s;
+  font-size: 0.875rem;
+  font-weight: 500;
+}
+
+.pilierNavBack:hover,
+.pilierNavNext:hover {
+  box-shadow: var(--ombre-md);
+  border-color: var(--bleu-bordure);
+  transform: translateY(-2px);
+}
+
+.pilierNavNext {
+  justify-content: flex-end;
+  text-align: right;
+}
+
+.pilierNavBack svg,
+.pilierNavNext svg {
+  color: var(--bleu-vif);
+  flex-shrink: 0;
+  transition: transform 0.25s;
+}
+
+.pilierNavBack:hover svg {
+  transform: translateX(-3px);
+}
+
+.pilierNavNext:hover svg {
+  transform: translateX(3px);
+}
+
+.pilierNavLabel {
+  font-size: 0.6875rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--texte-4);
+  margin-bottom: 0.25rem;
+}
+
+.pilierNavTitle {
+  font-family: var(--font-montserrat), sans-serif;
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--texte);
+  letter-spacing: -0.01em;
+}
+
+/* ─── Responsive ─── */
+@media (max-width: 900px) {
+  .breadcrumbBar {
+    padding: calc(72px + 1.25rem) 1.5rem 0;
+  }
+
+  .subHero {
+    padding: 1.5rem 1.5rem 3rem;
+  }
+
+  .subHero::after {
+    display: none;
+  }
+
+  .pilierNav {
+    padding: 2rem 1.5rem 3rem;
+  }
+
+  .pilierNavGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .pilierNavNext {
+    justify-content: flex-start;
+    text-align: left;
+    flex-direction: row-reverse;
+  }
+}
+
+@media (max-width: 640px) {
+  .breadcrumbBar {
+    padding: calc(72px + 1rem) 1rem 0;
+  }
+
+  .subHero {
+    padding: 1.25rem 1rem 2.5rem;
+  }
+
+  .pilierNav {
+    padding: 2rem 1rem 2.5rem;
+  }
+
+  .pilierNavBack,
+  .pilierNavNext {
+    padding: 1rem 1.25rem;
+  }
+}
