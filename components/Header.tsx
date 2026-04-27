@@ -10,16 +10,38 @@ const rseSubItems = [
     href: "/rse/environnement",
     label: "Environnement",
     desc: "Empreinte carbone, économie circulaire, déchets",
+    icon: (
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+        <path d="M12 2a10 10 0 0 1 10 10c0 4-2 7-5 9" />
+        <path d="M12 22a10 10 0 0 1-10-10c0-4 2-7 5-9" />
+        <path d="M12 8v8" />
+        <path d="M8 12h8" />
+      </svg>
+    ),
   },
   {
     href: "/rse/societal",
     label: "Engagement sociétal",
     desc: "Inclusion par l'emploi, santé et sécurité",
+    icon: (
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+        <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2" />
+        <circle cx="9" cy="7" r="4" />
+        <path d="M23 21v-2a4 4 0 0 0-3-3.87" />
+        <path d="M16 3.13a4 4 0 0 1 0 7.75" />
+      </svg>
+    ),
   },
   {
     href: "/rse/prevention",
     label: "Prévention",
     desc: "Maîtrise des risques sur site occupé",
+    icon: (
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+        <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
+        <path d="m9 12 2 2 4-4" />
+      </svg>
+    ),
   },
 ];
 
@@ -111,6 +133,11 @@ export default function Header() {
                       className={`header-dropdown${isDropdownOpen ? " open" : ""}`}
                       role="menu"
                     >
+                      <div className="header-dropdown-header">
+                        <span className="header-dropdown-eyebrow">Notre démarche</span>
+                        <span className="header-dropdown-title">Responsabilité Sociétale</span>
+                      </div>
+
                       <ul className="header-dropdown-list">
                         {rseSubItems.map((sub) => (
                           <li key={sub.href}>
@@ -119,13 +146,31 @@ export default function Header() {
                               className="header-dropdown-item"
                               role="menuitem"
                             >
-                              <span className="header-dropdown-item-bar" />
-                              <span className="header-dropdown-item-label">
-                                {sub.label}
+                              <span className="header-dropdown-item-icon">
+                                {sub.icon}
                               </span>
-                              <span className="header-dropdown-item-desc">
-                                {sub.desc}
+                              <span className="header-dropdown-item-content">
+                                <span className="header-dropdown-item-label">
+                                  {sub.label}
+                                </span>
+                                <span className="header-dropdown-item-desc">
+                                  {sub.desc}
+                                </span>
                               </span>
+                              <svg
+                                className="header-dropdown-item-arrow"
+                                width="14"
+                                height="14"
+                                viewBox="0 0 24 24"
+                                fill="none"
+                                stroke="currentColor"
+                                strokeWidth="2.2"
+                                strokeLinecap="round"
+                                strokeLinejoin="round"
+                                aria-hidden="true"
+                              >
+                                <polyline points="9 18 15 12 9 6" />
+                              </svg>
                             </Link>
                           </li>
                         ))}

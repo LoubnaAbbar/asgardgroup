@@ -83,7 +83,7 @@
 
 .footer-logo-img {
   width: auto;
-  height: 56px;
+  height: 36px;
   object-fit: contain;
   opacity: 0.95;
   transition: opacity 0.25s ease;

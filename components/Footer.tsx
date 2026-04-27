@@ -1,5 +1,5 @@
 import Link from "next/link";
-
+import Image from "next/image";
 /**
  * Footer global du site.
  *
@@ -21,22 +21,15 @@ export default function Footer() {
 <Link href="/" className="footer-logo" aria-label="Retour à l'accueil">
               
             </Link>
-          <Link href="/" className="footer-logo" aria-label="Retour à l'accueil">
-            <span
-              className="footer-logo-img"
-              style={{
-                display: "inline-flex",
-                alignItems: "center",
-                fontFamily: "var(--font-montserrat)",
-                fontWeight: 800,
-                fontSize: "1.5rem",
-                letterSpacing: "-0.02em",
-                color: "#fff",
-              }}
-            >
-              [LOGO]
-            </span>
-          </Link>
+                  <Link href="/" className="footer-logo" aria-label="Retour à l'accueil">
+                    <Image
+                      src="/logos/logo-footer.png"
+                      alt="Logo Asgard Group"
+                      width={170}
+                      height={10}
+                      className="footer-logo-img"
+                    />
+                  </Link>
 
           <p className="footer-tagline">
             Entreprise multi-technique au service des professionnels :
