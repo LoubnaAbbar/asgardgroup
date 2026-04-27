@@ -1,8 +1,6 @@
 import { NextResponse } from "next/server";
 import { Resend } from "resend";
 
-const resend = new Resend(process.env.RESEND_API_KEY);
-
 const PRESTATION_LABELS: Record<string, string> = {
   cvc: "Génie Climatique",
   froid: "Froid & Climatisation",
@@ -27,6 +25,17 @@ const TYPE_SITE_LABELS: Record<string, string> = {
 
 export async function POST(req: Request) {
   try {
+    // ── Vérification de la clé API Resend (au runtime, pas au build) ────────
+    const apiKey = process.env.RESEND_API_KEY;
+    if (!apiKey) {
+      console.error("RESEND_API_KEY manquante");
+      return NextResponse.json(
+        { error: "Configuration serveur manquante (RESEND_API_KEY)." },
+        { status: 500 }
+      );
+    }
+    const resend = new Resend(apiKey);
+
     // ── Lecture multipart/form-data ──────────────────────────────────────────
     const form = await req.formData();
 
