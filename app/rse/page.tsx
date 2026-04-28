@@ -12,7 +12,7 @@ export default function RsePage() {
   return (
     <main className={styles.rse}>
       {/* ═══════════════════════════════════════════
-          HERO
+          HERO — pas de reveal (au-dessus du pli)
           ═══════════════════════════════════════════ */}
       <section className={styles.hero}>
         <div className={styles.heroInner}>
@@ -35,7 +35,7 @@ export default function RsePage() {
           ═══════════════════════════════════════════ */}
       <section className={styles.piliers}>
         <div className={styles.container}>
-          <div className={styles.sectionHeader}>
+          <div className={`${styles.sectionHeader} reveal`}>
             <div className={styles.sectionLabel}>Nos trois piliers</div>
             <h2 className={styles.sectionTitle}>
               Une démarche <em>structurée</em>
@@ -48,7 +48,11 @@ export default function RsePage() {
           </div>
 
           <div className={styles.piliersGrid}>
-            <Link href="/rse/environnement" className={styles.pilierCard}>
+            <Link
+              href="/rse/environnement"
+              className={`${styles.pilierCard} reveal`}
+              style={{ transitionDelay: "0ms" }}
+            >
               <div className={styles.pilierIcon}>
                 <svg
                   width="28"
@@ -73,7 +77,11 @@ export default function RsePage() {
               <span className={styles.pilierArrow}>Découvrir →</span>
             </Link>
 
-            <Link href="/rse/societal" className={styles.pilierCard}>
+            <Link
+              href="/rse/societal"
+              className={`${styles.pilierCard} reveal`}
+              style={{ transitionDelay: "120ms" }}
+            >
               <div className={styles.pilierIcon}>
                 <svg
                   width="28"
@@ -99,7 +107,11 @@ export default function RsePage() {
               <span className={styles.pilierArrow}>Découvrir →</span>
             </Link>
 
-            <Link href="/rse/prevention" className={styles.pilierCard}>
+            <Link
+              href="/rse/prevention"
+              className={`${styles.pilierCard} reveal`}
+              style={{ transitionDelay: "240ms" }}
+            >
               <div className={styles.pilierIcon}>
                 <svg
                   width="28"
@@ -132,19 +144,28 @@ export default function RsePage() {
       <section className={styles.chiffres}>
         <div className={styles.container}>
           <div className={styles.chiffresGrid}>
-            <div className={styles.chiffreItem}>
+            <div
+              className={`${styles.chiffreItem} reveal`}
+              style={{ transitionDelay: "0ms" }}
+            >
               <div className={styles.chiffreVal}>100%</div>
               <div className={styles.chiffreLabel}>
                 des équipes engagées dans la démarche
               </div>
             </div>
-            <div className={styles.chiffreItem}>
+            <div
+              className={`${styles.chiffreItem} reveal`}
+              style={{ transitionDelay: "100ms" }}
+            >
               <div className={styles.chiffreVal}>2025</div>
               <div className={styles.chiffreLabel}>
                 Certification Employeur de Référence
               </div>
             </div>
-            <div className={styles.chiffreItem}>
+            <div
+              className={`${styles.chiffreItem} reveal`}
+              style={{ transitionDelay: "200ms" }}
+            >
               <div className={styles.chiffreVal}>3</div>
               <div className={styles.chiffreLabel}>
                 filières de valorisation des matériels
@@ -157,7 +178,7 @@ export default function RsePage() {
       {/* ═══════════════════════════════════════════
           CTA FINAL
           ═══════════════════════════════════════════ */}
-      <section className={styles.cta}>
+      <section className={`${styles.cta} reveal`}>
         <div className={styles.ctaInner}>
           <h2>
             Un projet à nous <em>confier</em>&nbsp;?

@@ -11,7 +11,7 @@ export const metadata: Metadata = {
 export default function PreventionPage() {
   return (
     <main className={styles.rse}>
-      {/* Fil d'Ariane */}
+      {/* Fil d'Ariane — pas de reveal */}
       <div className={styles.breadcrumbBar}>
         <div className={styles.container}>
           <nav className={styles.breadcrumb} aria-label="Fil d'Ariane">
@@ -22,7 +22,7 @@ export default function PreventionPage() {
         </div>
       </div>
 
-      {/* Hero page */}
+      {/* Hero page — pas de reveal (au-dessus du pli) */}
       <section className={styles.subHero}>
         <div className={styles.container}>
           <div className={styles.subHeroBadge}>Pilier 03</div>
@@ -41,7 +41,7 @@ export default function PreventionPage() {
       {/* 08 — Actions de prévention */}
       <section className={styles.bloc}>
         <div className={styles.container}>
-          <div className={styles.blocHeader}>
+          <div className={`${styles.blocHeader} reveal`}>
             <div className={styles.blocNum}>08</div>
             <div>
               <div className={styles.sectionLabel}>Actions sur chantier</div>
@@ -52,28 +52,40 @@ export default function PreventionPage() {
           </div>
 
           <div className={styles.actionsGrid}>
-            <div className={styles.actionCard}>
+            <div
+              className={`${styles.actionCard} reveal`}
+              style={{ transitionDelay: "0ms" }}
+            >
               <strong>Maîtrise des fluides</strong>
               <span>
                 Procédures de consignation et vérification systématique avant
                 intervention sur les réseaux hydrauliques et aérauliques.
               </span>
             </div>
-            <div className={styles.actionCard}>
+            <div
+              className={`${styles.actionCard} reveal`}
+              style={{ transitionDelay: "120ms" }}
+            >
               <strong>Prévention des déversements</strong>
               <span>
                 Bacs de rétention, kits antipollution et formation des équipes
                 à la gestion d’un incident.
               </span>
             </div>
-            <div className={styles.actionCard}>
+            <div
+              className={`${styles.actionCard} reveal`}
+              style={{ transitionDelay: "240ms" }}
+            >
               <strong>Gestion des nuisances</strong>
               <span>
                 Organisation des interventions bruyantes hors heures
                 d’occupation et protection des zones voisines.
               </span>
             </div>
-            <div className={styles.actionCard}>
+            <div
+              className={`${styles.actionCard} reveal`}
+              style={{ transitionDelay: "360ms" }}
+            >
               <strong>Propreté du site</strong>
               <span>
                 Nettoyage quotidien, protection des sols et des équipements
@@ -87,7 +99,7 @@ export default function PreventionPage() {
       {/* 09 — Protocole site occupé */}
       <section className={`${styles.bloc} ${styles.blocAlt}`}>
         <div className={styles.container}>
-          <div className={styles.blocHeader}>
+          <div className={`${styles.blocHeader} reveal`}>
             <div className={styles.blocNum}>09</div>
             <div>
               <div className={styles.sectionLabel}>Site occupé</div>
@@ -97,7 +109,7 @@ export default function PreventionPage() {
             </div>
           </div>
 
-          <p className={styles.blocIntro}>
+          <p className={`${styles.blocIntro} reveal`}>
             Intervenir en site occupé impose une rigueur supplémentaire.
             Nos équipes sont formées à un protocole strict garantissant la
             continuité d’activité de nos clients et le confort de leurs
@@ -105,28 +117,40 @@ export default function PreventionPage() {
           </p>
 
           <div className={styles.miniCards}>
-            <div className={styles.miniCard}>
+            <div
+              className={`${styles.miniCard} reveal`}
+              style={{ transitionDelay: "0ms" }}
+            >
               <strong>Planning concerté</strong>
               <span>
                 Créneaux d’intervention définis avec le client pour limiter
                 l’impact sur l’activité.
               </span>
             </div>
-            <div className={styles.miniCard}>
+            <div
+              className={`${styles.miniCard} reveal`}
+              style={{ transitionDelay: "100ms" }}
+            >
               <strong>Balisage</strong>
               <span>
                 Zones d’intervention clairement signalées et sécurisées en
                 permanence.
               </span>
             </div>
-            <div className={styles.miniCard}>
+            <div
+              className={`${styles.miniCard} reveal`}
+              style={{ transitionDelay: "200ms" }}
+            >
               <strong>Communication</strong>
               <span>
                 Information préalable des usagers et affichage des consignes
                 temporaires.
               </span>
             </div>
-            <div className={styles.miniCard}>
+            <div
+              className={`${styles.miniCard} reveal`}
+              style={{ transitionDelay: "300ms" }}
+            >
               <strong>Remise en état</strong>
               <span>
                 Nettoyage et remise en configuration d’origine à la fin de
@@ -140,7 +164,7 @@ export default function PreventionPage() {
       {/* Navigation entre piliers */}
       <section className={styles.pilierNav}>
         <div className={styles.container}>
-          <div className={styles.pilierNavGrid}>
+          <div className={`${styles.pilierNavGrid} reveal`}>
             <Link href="/rse/societal" className={styles.pilierNavBack}>
               <svg
                 width="18"

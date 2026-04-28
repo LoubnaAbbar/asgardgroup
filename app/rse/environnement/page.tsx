@@ -11,7 +11,7 @@ export const metadata: Metadata = {
 export default function EnvironnementPage() {
   return (
     <main className={styles.rse}>
-      {/* Fil d'Ariane */}
+      {/* Fil d'Ariane — pas de reveal */}
       <div className={styles.breadcrumbBar}>
         <div className={styles.container}>
           <nav className={styles.breadcrumb} aria-label="Fil d'Ariane">
@@ -22,7 +22,7 @@ export default function EnvironnementPage() {
         </div>
       </div>
 
-      {/* Hero page */}
+      {/* Hero page — pas de reveal (au-dessus du pli) */}
       <section className={styles.subHero}>
         <div className={styles.container}>
           <div className={styles.subHeroBadge}>Pilier 01</div>
@@ -42,7 +42,7 @@ export default function EnvironnementPage() {
       {/* 01 — Politique environnementale */}
       <section className={styles.bloc}>
         <div className={styles.container}>
-          <div className={styles.blocHeader}>
+          <div className={`${styles.blocHeader} reveal`}>
             <div className={styles.blocNum}>01</div>
             <div>
               <div className={styles.sectionLabel}>Axes stratégiques</div>
@@ -52,7 +52,7 @@ export default function EnvironnementPage() {
             </div>
           </div>
 
-          <div className={styles.dualCard}>
+          <div className={`${styles.dualCard} reveal`}>
             <div className={styles.dualCardCol}>
               <h3 className={styles.dualCardTitle}>Objectifs chiffrés</h3>
               <ul className={styles.checkList}>
@@ -79,7 +79,7 @@ export default function EnvironnementPage() {
       {/* 02 — Flotte propre */}
       <section className={`${styles.bloc} ${styles.blocAlt}`}>
         <div className={styles.container}>
-          <div className={styles.blocHeader}>
+          <div className={`${styles.blocHeader} reveal`}>
             <div className={styles.blocNum}>02</div>
             <div>
               <div className={styles.sectionLabel}>Mobilité</div>
@@ -89,7 +89,7 @@ export default function EnvironnementPage() {
             </div>
           </div>
 
-          <p className={styles.blocIntro}>
+          <p className={`${styles.blocIntro} reveal`}>
             ASGARD Group s’engage durablement sur une flotte de véhicules
             légers à faible émission de CO₂. L’acquisition de véhicules
             hybrides et électriques est en cours de déploiement, et les
@@ -98,28 +98,40 @@ export default function EnvironnementPage() {
           </p>
 
           <div className={styles.miniCards}>
-            <div className={styles.miniCard}>
+            <div
+              className={`${styles.miniCard} reveal`}
+              style={{ transitionDelay: "0ms" }}
+            >
               <strong>Sélection des modèles</strong>
               <span>
                 Meilleur coût global et limite d’émission de CO₂ fixée par
                 catégorie.
               </span>
             </div>
-            <div className={styles.miniCard}>
+            <div
+              className={`${styles.miniCard} reveal`}
+              style={{ transitionDelay: "100ms" }}
+            >
               <strong>Conduite responsable</strong>
               <span>
                 Respect du code de la route et écoconduite prodiguée à tous
                 les collaborateurs.
               </span>
             </div>
-            <div className={styles.miniCard}>
+            <div
+              className={`${styles.miniCard} reveal`}
+              style={{ transitionDelay: "200ms" }}
+            >
               <strong>Mobilité douce</strong>
               <span>
                 Transports en commun et vélo favorisés pour les courts
                 trajets.
               </span>
             </div>
-            <div className={styles.miniCard}>
+            <div
+              className={`${styles.miniCard} reveal`}
+              style={{ transitionDelay: "300ms" }}
+            >
               <strong>Objectif</strong>
               <span>
                 Réduire l’empreinte carbone liée aux déplacements
@@ -133,7 +145,7 @@ export default function EnvironnementPage() {
       {/* 03 — Économie circulaire */}
       <section className={styles.bloc}>
         <div className={styles.container}>
-          <div className={styles.blocHeader}>
+          <div className={`${styles.blocHeader} reveal`}>
             <div className={styles.blocNum}>03</div>
             <div>
               <div className={styles.sectionLabel}>Économie circulaire</div>
@@ -143,30 +155,39 @@ export default function EnvironnementPage() {
             </div>
           </div>
 
-          <p className={styles.blocIntro}>
+          <p className={`${styles.blocIntro} reveal`}>
             Notre démarche s’articule autour de deux axes&nbsp;: le réemploi
             des matériels via notre plateforme <strong>BeeWe</strong>, et le
             réemploi des matériaux en Île-de-France grâce à{" "}
             <strong>Mobius</strong>.
           </p>
 
-          <h4 className={styles.filieresTitre}>Trois filières de valorisation</h4>
+          <h4 className={`${styles.filieresTitre} reveal`}>Trois filières de valorisation</h4>
           <div className={styles.filieres}>
-            <div className={styles.filiere}>
+            <div
+              className={`${styles.filiere} reveal`}
+              style={{ transitionDelay: "0ms" }}
+            >
               <div className={styles.filiereIcon}>€</div>
               <strong>La vente</strong>
               <span>
                 À des entreprises spécialisées ou via des plateformes dédiées.
               </span>
             </div>
-            <div className={styles.filiere}>
+            <div
+              className={`${styles.filiere} reveal`}
+              style={{ transitionDelay: "120ms" }}
+            >
               <div className={styles.filiereIcon}>❤</div>
               <strong>Le don</strong>
               <span>
                 Après dépose, stockage organisé et planning de reprise.
               </span>
             </div>
-            <div className={styles.filiere}>
+            <div
+              className={`${styles.filiere} reveal`}
+              style={{ transitionDelay: "240ms" }}
+            >
               <div className={styles.filiereIcon}>⇄</div>
               <strong>Le don collaboratif</strong>
               <span>
@@ -176,9 +197,12 @@ export default function EnvironnementPage() {
             </div>
           </div>
 
-          <h4 className={styles.processTitre}>Notre processus en 3 étapes</h4>
+          <h4 className={`${styles.processTitre} reveal`}>Notre processus en 3 étapes</h4>
           <div className={styles.process}>
-            <div className={styles.processStep}>
+            <div
+              className={`${styles.processStep} reveal`}
+              style={{ transitionDelay: "0ms" }}
+            >
               <div className={styles.processStepNum}>1</div>
               <h5>Audit</h5>
               <ul>
@@ -188,7 +212,10 @@ export default function EnvironnementPage() {
                 <li>Indication de la nature et de la marque</li>
               </ul>
             </div>
-            <div className={styles.processStep}>
+            <div
+              className={`${styles.processStep} reveal`}
+              style={{ transitionDelay: "150ms" }}
+            >
               <div className={styles.processStepNum}>2</div>
               <h5>Stock</h5>
               <ul>
@@ -197,7 +224,10 @@ export default function EnvironnementPage() {
                 <li>Scénario 3&nbsp;: site externe MOBIUS</li>
               </ul>
             </div>
-            <div className={styles.processStep}>
+            <div
+              className={`${styles.processStep} reveal`}
+              style={{ transitionDelay: "300ms" }}
+            >
               <div className={styles.processStepNum}>3</div>
               <h5>Réemploi</h5>
               <ul>
@@ -213,7 +243,7 @@ export default function EnvironnementPage() {
       {/* 04 — Gestion des déchets */}
       <section className={`${styles.bloc} ${styles.blocAlt}`}>
         <div className={styles.container}>
-          <div className={styles.blocHeader}>
+          <div className={`${styles.blocHeader} reveal`}>
             <div className={styles.blocNum}>04</div>
             <div>
               <div className={styles.sectionLabel}>Déchets de chantier</div>
@@ -223,7 +253,7 @@ export default function EnvironnementPage() {
             </div>
           </div>
 
-          <div className={styles.dualCard}>
+          <div className={`${styles.dualCard} reveal`}>
             <div className={styles.dualCardCol}>
               <h3 className={styles.dualCardTitle}>Actions sur le site</h3>
               <ul className={styles.checkList}>
@@ -250,7 +280,7 @@ export default function EnvironnementPage() {
       {/* Navigation entre piliers */}
       <section className={styles.pilierNav}>
         <div className={styles.container}>
-          <div className={styles.pilierNavGrid}>
+          <div className={`${styles.pilierNavGrid} reveal`}>
             <Link href="/rse" className={styles.pilierNavBack}>
               <svg
                 width="18"

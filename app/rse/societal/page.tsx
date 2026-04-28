@@ -11,7 +11,7 @@ export const metadata: Metadata = {
 export default function SocietalPage() {
   return (
     <main className={styles.rse}>
-      {/* Fil d'Ariane */}
+      {/* Fil d'Ariane — pas de reveal */}
       <div className={styles.breadcrumbBar}>
         <div className={styles.container}>
           <nav className={styles.breadcrumb} aria-label="Fil d'Ariane">
@@ -22,7 +22,7 @@ export default function SocietalPage() {
         </div>
       </div>
 
-      {/* Hero page */}
+      {/* Hero page — pas de reveal (au-dessus du pli) */}
       <section className={styles.subHero}>
         <div className={styles.container}>
           <div className={styles.subHeroBadge}>Pilier 02</div>
@@ -41,7 +41,7 @@ export default function SocietalPage() {
       {/* 05 — Certification & actions santé/sécurité */}
       <section className={styles.bloc}>
         <div className={styles.container}>
-          <div className={styles.blocHeader}>
+          <div className={`${styles.blocHeader} reveal`}>
             <div className={styles.blocNum}>05</div>
             <div>
               <div className={styles.sectionLabel}>Santé & sécurité</div>
@@ -51,7 +51,7 @@ export default function SocietalPage() {
             </div>
           </div>
 
-          <div className={styles.certifBanner}>
+          <div className={`${styles.certifBanner} reveal`}>
             <div className={styles.certifBadge}>
               <svg
                 width="32"
@@ -80,44 +80,62 @@ export default function SocietalPage() {
             </div>
           </div>
 
-          <h3 className={styles.miniTitre}>Nos actions concrètes</h3>
+          <h3 className={`${styles.miniTitre} reveal`}>Nos actions concrètes</h3>
           <div className={styles.actionsGrid}>
-            <div className={styles.actionCard}>
+            <div
+              className={`${styles.actionCard} reveal`}
+              style={{ transitionDelay: "0ms" }}
+            >
               <strong>DUERP</strong>
               <span>
                 Document Unique d’Évaluation des Risques Professionnels, mis à
                 jour annuellement.
               </span>
             </div>
-            <div className={styles.actionCard}>
+            <div
+              className={`${styles.actionCard} reveal`}
+              style={{ transitionDelay: "100ms" }}
+            >
               <strong>PAPRIPACT</strong>
               <span>
                 Programme annuel de prévention des risques et d’amélioration des
                 conditions de travail.
               </span>
             </div>
-            <div className={styles.actionCard}>
+            <div
+              className={`${styles.actionCard} reveal`}
+              style={{ transitionDelay: "200ms" }}
+            >
               <strong>Veille SQVT</strong>
               <span>
                 Suivi de la Santé et Qualité de Vie au Travail tout au long de
                 l’année.
               </span>
             </div>
-            <div className={styles.actionCard}>
+            <div
+              className={`${styles.actionCard} reveal`}
+              style={{ transitionDelay: "300ms" }}
+            >
               <strong>Sensibilisation</strong>
               <span>
                 Campagnes régulières sur les risques professionnels auprès de
                 toutes les équipes.
               </span>
             </div>
-            <div className={styles.actionCard}>
+            <div
+              className={`${styles.actionCard} reveal`}
+              style={{ transitionDelay: "400ms" }}
+            >
               <strong>Amélioration continue</strong>
               <span>
                 Échanges avec des professionnels externes pour faire évoluer nos
                 procédures.
               </span>
             </div>
-            <div className={styles.actionCard}>
+            <div
+              className={`${styles.actionCard} reveal`}
+              style={{ transitionDelay: "500ms" }}
+            >
               <strong>Accompagnement dédié</strong>
               <span>
                 Suivi individuel Santé, Sécurité et Qualité de Vie pour chaque
@@ -131,7 +149,7 @@ export default function SocietalPage() {
       {/* 06 — Inclusion par l'emploi */}
       <section className={`${styles.bloc} ${styles.blocAlt}`}>
         <div className={styles.container}>
-          <div className={styles.blocHeader}>
+          <div className={`${styles.blocHeader} reveal`}>
             <div className={styles.blocNum}>06</div>
             <div>
               <div className={styles.sectionLabel}>Inclusion par l’emploi</div>
@@ -141,7 +159,7 @@ export default function SocietalPage() {
             </div>
           </div>
 
-          <p className={styles.blocIntro}>
+          <p className={`${styles.blocIntro} reveal`}>
             Former, accompagner et recruter des personnes éloignées de
             l’emploi est un vecteur de mixité sociale. Les métiers de la
             construction offrent des perspectives de carrière à tous les
@@ -150,14 +168,20 @@ export default function SocietalPage() {
           </p>
 
           <div className={styles.visionGrid}>
-            <div className={styles.visionCard}>
+            <div
+              className={`${styles.visionCard} reveal`}
+              style={{ transitionDelay: "0ms" }}
+            >
               <div className={styles.visionLabel}>Notre vision</div>
               <p>
                 Faire de la diversité une source de richesse collective et
                 d’innovation sur chacun de nos chantiers.
               </p>
             </div>
-            <div className={styles.visionCard}>
+            <div
+              className={`${styles.visionCard} reveal`}
+              style={{ transitionDelay: "150ms" }}
+            >
               <div className={styles.visionLabel}>Notre objectif</div>
               <p>
                 Recruter en contrat de longue durée des personnes éloignées de
@@ -166,22 +190,31 @@ export default function SocietalPage() {
             </div>
           </div>
 
-          <h4 className={styles.miniTitre}>Comment agissons-nous&nbsp;?</h4>
+          <h4 className={`${styles.miniTitre} reveal`}>Comment agissons-nous&nbsp;?</h4>
           <div className={styles.actionsGrid}>
-            <div className={styles.actionCard}>
+            <div
+              className={`${styles.actionCard} reveal`}
+              style={{ transitionDelay: "0ms" }}
+            >
               <strong>Programmes d’insertion</strong>
               <span>
                 Auprès de minorités locales socialement défavorisées.
               </span>
             </div>
-            <div className={styles.actionCard}>
+            <div
+              className={`${styles.actionCard} reveal`}
+              style={{ transitionDelay: "120ms" }}
+            >
               <strong>Initiatives jeunesse</strong>
               <span>
                 Ouverture des portes de l’entreprise aux jeunes de quartiers
                 en difficulté ou zones isolées.
               </span>
             </div>
-            <div className={styles.actionCard}>
+            <div
+              className={`${styles.actionCard} reveal`}
+              style={{ transitionDelay: "240ms" }}
+            >
               <strong>Partenariats</strong>
               <span>
                 Coopération avec des structures dédiées aux parcours
@@ -195,7 +228,7 @@ export default function SocietalPage() {
       {/* 07 — Publics concernés */}
       <section className={styles.bloc}>
         <div className={styles.container}>
-          <div className={styles.blocHeader}>
+          <div className={`${styles.blocHeader} reveal`}>
             <div className={styles.blocNum}>07</div>
             <div>
               <div className={styles.sectionLabel}>Nos engagements</div>
@@ -205,33 +238,59 @@ export default function SocietalPage() {
             </div>
           </div>
 
-          <p className={styles.blocIntro}>
+          <p className={`${styles.blocIntro} reveal`}>
             Notre politique d’inclusion s’adresse prioritairement aux
             personnes les plus éloignées du marché du travail, dans une
             logique de long terme.
           </p>
 
           <div className={styles.publics}>
-            <div className={styles.publicItem}>
+            <div
+              className={`${styles.publicItem} reveal`}
+              style={{ transitionDelay: "0ms" }}
+            >
               Chômeurs de longue durée (sans emploi depuis 12 mois et plus)
             </div>
-            <div className={styles.publicItem}>
+            <div
+              className={`${styles.publicItem} reveal`}
+              style={{ transitionDelay: "60ms" }}
+            >
               Bénéficiaires de minima sociaux
             </div>
-            <div className={styles.publicItem}>
+            <div
+              className={`${styles.publicItem} reveal`}
+              style={{ transitionDelay: "120ms" }}
+            >
               Chômeurs en situation de handicap
             </div>
-            <div className={styles.publicItem}>
+            <div
+              className={`${styles.publicItem} reveal`}
+              style={{ transitionDelay: "180ms" }}
+            >
               Jeunes sans emploi et hors du système scolaire
             </div>
-            <div className={styles.publicItem}>
+            <div
+              className={`${styles.publicItem} reveal`}
+              style={{ transitionDelay: "240ms" }}
+            >
               Personnes vivant en territoire fragile
             </div>
-            <div className={styles.publicItem}>Parents isolés</div>
-            <div className={styles.publicItem}>
+            <div
+              className={`${styles.publicItem} reveal`}
+              style={{ transitionDelay: "300ms" }}
+            >
+              Parents isolés
+            </div>
+            <div
+              className={`${styles.publicItem} reveal`}
+              style={{ transitionDelay: "360ms" }}
+            >
               Personnes récemment arrivées en France et réfugiés
             </div>
-            <div className={styles.publicItem}>
+            <div
+              className={`${styles.publicItem} reveal`}
+              style={{ transitionDelay: "420ms" }}
+            >
               Personnes sortant de prison ou sous main de justice
             </div>
           </div>
@@ -241,7 +300,7 @@ export default function SocietalPage() {
       {/* Navigation entre piliers */}
       <section className={styles.pilierNav}>
         <div className={styles.container}>
-          <div className={styles.pilierNavGrid}>
+          <div className={`${styles.pilierNavGrid} reveal`}>
             <Link href="/rse/environnement" className={styles.pilierNavBack}>
               <svg
                 width="18"
