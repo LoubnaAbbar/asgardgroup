@@ -1,25 +1,28 @@
 "use client";
 
 import { useState, useEffect, useRef } from "react";
+import Image from "next/image";
 
 const SLIDES = [
   { src: "/images/hero-asgard.jpg",   alt: "ASGARD Group – Génie Électrique" },
   { src: "/images/hero-asgard-2.jpg", alt: "ASGARD Group – Plomberie" },
-  { src: "/images/hero-asgard-3.jpeg", alt: "ASGARD Group – Génie Climatique" },
+  { src: "/images/hero-asgard-3.jpg", alt: "ASGARD Group – Génie Climatique" },
+  // ⚠️ Note : hero-asgard-3.jpeg → hero-asgard-3.jpg (le script d'optimisation
+  // a renommé en .jpg). Si vos fichiers sont encore en .jpeg, restaurez l'extension.
 ];
 
-const INTERVAL      = 5000; // ms entre chaque slide
-const FADE_MS       = 1000; // durée du fondu CSS
+const INTERVAL = 5000; // ms entre chaque slide
+const FADE_MS  = 1000; // durée du fondu CSS
 
 export default function HeroSection() {
   const [active, setActive] = useState(0);
   const activeRef = useRef(active);
   activeRef.current = active;
 
-  // Défilement automatique — lit toujours la valeur courante via le ref
+  // Défilement automatique
   useEffect(() => {
     const id = setInterval(() => {
-      setActive(prev => (prev + 1) % SLIDES.length);
+      setActive((prev) => (prev + 1) % SLIDES.length);
     }, INTERVAL);
     return () => clearInterval(id);
   }, []);
@@ -32,19 +35,21 @@ export default function HeroSection() {
       <style>{`
         .hero::before { display: none !important; }
 
-        .slide-img {
+        .slide-img-wrapper {
           position: absolute;
           inset: 0;
-          width: 100%;
-          height: 100%;
-          object-fit: cover;
-          object-position: center;
           opacity: 0;
           transition: opacity ${FADE_MS}ms cubic-bezier(0.4, 0, 0.2, 1);
           will-change: opacity;
         }
-        .slide-img.is-active {
+        .slide-img-wrapper.is-active {
           opacity: 1;
+        }
+
+        /* L'Image de Next.js s'insère dans le wrapper */
+        .slide-img-wrapper img {
+          object-fit: cover;
+          object-position: center;
         }
 
         @keyframes progressBar {
@@ -59,18 +64,26 @@ export default function HeroSection() {
       >
         {/* ── Fond carrousel ── */}
         <div style={{ position: "absolute", inset: 0, zIndex: 0, overflow: "hidden" }}>
-          {/*
-            Toutes les images sont dans le DOM.
-            Seule celle avec .is-active est à opacity:1.
-            CSS gère la transition — pas de swap manuel, pas de glitch.
-          */}
           {SLIDES.map((slide, i) => (
-            <img
+            <div
               key={i}
-              src={slide.src}
-              alt={slide.alt}
-              className={`slide-img${i === active ? " is-active" : ""}`}
-            />
+              className={`slide-img-wrapper${i === active ? " is-active" : ""}`}
+            >
+              <Image
+                src={slide.src}
+                alt={slide.alt}
+                fill
+                /* La 1ère image est prioritaire pour optimiser le LCP */
+                priority={i === 0}
+                /* Pour les images suivantes : chargement standard, pas de lazy
+                   (sinon elles ne seraient jamais chargées avant que le slider y arrive) */
+                loading={i === 0 ? "eager" : "eager"}
+                /* Tailles : carrousel full-width sur tous écrans */
+                sizes="100vw"
+                /* Qualité : 80 = sweet spot entre poids et rendu */
+                quality={80}
+              />
+            </div>
           ))}
 
           {/* Voile unique par-dessus toutes les images */}
@@ -129,8 +142,14 @@ export default function HeroSection() {
                 appearance: "none",
                 border: "none",
                 cursor: "pointer",
-                padding: 0,
+                /* Touch target accessibilité : 44x44px de zone cliquable invisible */
+                padding: "0.75rem 0.4rem",
                 background: "transparent",
+                minWidth: "44px",
+                minHeight: "44px",
+                display: "flex",
+                alignItems: "center",
+                justifyContent: "center",
               }}
             >
               <span
