@@ -37,7 +37,7 @@ const PROJETS: Projet[] = [
     duree: "9 mois",
     milieu_occupe: false,
     categorie: "Génie Climatique",
-    image: "/images/refs/campus-seine.jpg",
+    image: "/images/refs/campus-seine.png",
   },
   {
     id: 2,
@@ -49,7 +49,7 @@ const PROJETS: Projet[] = [
     duree: "6 mois",
     milieu_occupe: true,
     categorie: "Génie Climatique",
-    image: "/images/refs/gecina-montmartre.jpg",
+    image: "/images/refs/gecina-montmartre.png",
   },
   {
     id: 3,
@@ -61,7 +61,7 @@ const PROJETS: Projet[] = [
     duree: "3 mois",
     milieu_occupe: true,
     categorie: "Génie Climatique",
-    image: "/images/refs/porte-doree.jpg",
+    image: "/images/refs/porte-doree.png",
   },
   {
     id: 4,
@@ -73,7 +73,7 @@ const PROJETS: Projet[] = [
     duree: "4 semaines",
     milieu_occupe: true,
     categorie: "Génie Climatique",
-    image: "/images/refs/fedex-adp.jpg",
+    image: "/images/refs/fedex-adp.png",
   },
   {
     id: 5,
@@ -85,7 +85,7 @@ const PROJETS: Projet[] = [
     duree: "12 semaines",
     milieu_occupe: true,
     categorie: "Génie Climatique",
-    image: "/images/refs/creps.jpg",
+    image: "/images/refs/creps.png",
   },
   {
     id: 6,
@@ -97,7 +97,7 @@ const PROJETS: Projet[] = [
     duree: "4 semaines",
     milieu_occupe: true,
     categorie: "Génie Climatique",
-    image: "/images/refs/fort-vincennes.jpg",
+    image: "/images/refs/fort-vincennes.png",
   },
   {
     id: 7,
@@ -121,7 +121,7 @@ const PROJETS: Projet[] = [
     duree: "2 mois",
     milieu_occupe: true,
     categorie: "Génie Climatique",
-    image: "/images/refs/versailles-satory.jpg",
+    image: "/images/refs/versailles-satory.png",
   },
   {
     id: 9,
@@ -133,7 +133,7 @@ const PROJETS: Projet[] = [
     duree: "3 mois",
     milieu_occupe: true,
     categorie: "Génie Climatique",
-    image: "/images/refs/quartus.jpg",
+    image: "/images/refs/quartus.png",
   },
   {
     id: 10,
@@ -145,7 +145,7 @@ const PROJETS: Projet[] = [
     duree: "6 semaines",
     milieu_occupe: true,
     categorie: "Génie Climatique",
-    image: "/images/refs/arpavie.jpg",
+    image: "/images/refs/arpavie.png",
   },
 
   // ── GÉNIE ÉLECTRIQUE ──────────────────────────────────────────
@@ -159,7 +159,7 @@ const PROJETS: Projet[] = [
     duree: "12 mois",
     milieu_occupe: false,
     categorie: "Génie Électrique",
-    image: "/images/refs/lycee-galois.jpg",
+    image: "/images/refs/evariste.jpg",
   },
   {
     id: 12,
@@ -171,7 +171,7 @@ const PROJETS: Projet[] = [
     duree: "9 mois",
     milieu_occupe: false,
     categorie: "Génie Électrique",
-    image: "/images/refs/mediatheque-massy.jpg",
+    image: "/images/refs/mediatheque-massy.png",
   },
   {
     id: 13,
@@ -183,7 +183,7 @@ const PROJETS: Projet[] = [
     duree: "6 mois",
     milieu_occupe: false,
     categorie: "Génie Électrique",
-    image: "/images/refs/ecole-allende.jpg",
+    image: "/images/refs/ecole-allende.png",
   },
   {
     id: 14,
@@ -195,7 +195,7 @@ const PROJETS: Projet[] = [
     duree: "3 mois",
     milieu_occupe: false,
     categorie: "Génie Électrique",
-    image: "/images/refs/creche-creteil.jpg",
+    image: "/images/refs/creche-creteil.png",
   },
 
   // ── PLOMBERIE & RÉSEAUX ───────────────────────────────────────
@@ -209,7 +209,7 @@ const PROJETS: Projet[] = [
     duree: "6 mois",
     milieu_occupe: false,
     categorie: "Plomberie & Réseaux",
-    image: "/images/refs/acms-serris.jpg",
+    image: "/images/refs/acms-serris.png",
   },
   {
     id: 16,
@@ -221,7 +221,7 @@ const PROJETS: Projet[] = [
     duree: "2 semaines",
     milieu_occupe: true,
     categorie: "Plomberie & Réseaux",
-    image: "/images/refs/bpce-valdeurope.jpg",
+    image: "/images/refs/bpce-valdeurope.png",
   },
 
   // ── TRAVAUX ARCHITECTURAUX ────────────────────────────────────
@@ -235,7 +235,7 @@ const PROJETS: Projet[] = [
     duree: "12 mois",
     milieu_occupe: false,
     categorie: "Travaux Architecturaux",
-    image: "/images/refs/lycees-77.jpg",
+    image: "/images/refs/lycees-77.png",
   },
   {
     id: 18,
@@ -247,7 +247,7 @@ const PROJETS: Projet[] = [
     duree: "2 mois",
     milieu_occupe: false,
     categorie: "Travaux Architecturaux",
-    image: "/images/refs/ibm-levallois.jpg",
+    image: "/images/refs/ibm-levallois.png",
   },
   {
     id: 19,
@@ -259,7 +259,7 @@ const PROJETS: Projet[] = [
     duree: "6 mois",
     milieu_occupe: false,
     categorie: "Travaux Architecturaux",
-    image: "/images/refs/acms-bureaux.jpg",
+    image: "/images/refs/acms-bureaux.png",
   },
 
   // ── MULTI-TECHNIQUE ───────────────────────────────────────────
@@ -273,7 +273,7 @@ const PROJETS: Projet[] = [
     duree: "3 sem/agence",
     milieu_occupe: false,
     categorie: "Multi-technique",
-    image: "/images/refs/bred-agences.jpg",
+    image: "/images/refs/bred-agences.png",
   },
   {
     id: 21,
@@ -285,7 +285,7 @@ const PROJETS: Projet[] = [
     duree: "Prestations continues",
     milieu_occupe: true,
     categorie: "Multi-technique",
-    image: "/images/refs/engie-multisites.jpg",
+    image: "/images/refs/engie-multisites.png",
   },
   {
     id: 22,
@@ -297,7 +297,7 @@ const PROJETS: Projet[] = [
     duree: "Prestations continues",
     milieu_occupe: true,
     categorie: "Multi-technique",
-    image: "/images/refs/keolis-multisites.jpg",
+    image: "/images/refs/keolis-multisites.png",
   },
 ];
 
@@ -427,22 +427,21 @@ export default function ReferencesSection() {
       {/* Logos clients */}
       <div className="clients-images reveal">
         {[
-          { src: "/images/engie.png",    alt: "ENGIE"      },
-          { src: "/images/sodexo.png",   alt: "SODEXO"     },
-          { src: "/images/spie.png",     alt: "SPIE"       },
-          { src: "/images/bouygues.png", alt: "BOUYGUES"   },
-          { src: "/images/hermes.png",   alt: "HERMÈS"     },
-          { src: "/images/natixis.png",  alt: "NATIXIS"    },
-          { src: "/images/bpce.png",     alt: "BPCE"       },
-          { src: "/images/bred.png",     alt: "BRED"       },
-          { src: "/images/fedex.png",    alt: "FEDEX"      },
-          { src: "/images/keolis.png",   alt: "KEOLIS"     },
-          { src: "/images/snef.png",     alt: "SNEF"       },
-          { src: "/images/idf.png",      alt: "Région IDF" },
-          { src: "/images/ratp.png",     alt: "RATP"       },
-          { src: "/images/acms.png",     alt: "ACMS"       },
-          { src: "/images/prodef.jpg",   alt: "PRODEF"     },
-          { src: "/images/gecina.jpg",   alt: "GECINA"     },
+          { src: "/images/refs/engie.png",    alt: "ENGIE"      },
+          { src: "/images/refs/sodexo.png",   alt: "SODEXO"     },
+          { src: "/images/refs/spie.png",     alt: "SPIE"       },
+          { src: "/images/refs/bouygues.png", alt: "BOUYGUES"   },
+          { src: "/images/refs/hermes.png",   alt: "HERMÈS"     },
+          { src: "/images/refs/natixis.png",  alt: "NATIXIS"    },
+          { src: "/images/refs/bpce.png",     alt: "BPCE"       },
+          { src: "/images/refs/bred.png",     alt: "BRED"       },
+          { src: "/images/refs/keolis.png",   alt: "KEOLIS"     },
+          { src: "/images/refs/snef.png",     alt: "SNEF"       },
+          { src: "/images/refs/idf.png",      alt: "Région IDF" },
+          { src: "/images/refs/ratp.png",     alt: "RATP"       },
+          { src: "/images/refs/acms.png",     alt: "ACMS"       },
+          { src: "/images/refs/prodef.png",   alt: "PRODEF"     },
+          { src: "/images/refs/gecina.png",   alt: "GECINA"     },
         ].map(({ src, alt }) => (
           <div key={alt} className="client-logo">
             <img src={src} alt={alt} />
