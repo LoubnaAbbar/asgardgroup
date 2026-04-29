@@ -5,6 +5,7 @@ import ScrollToTop from "@/components/ScrollToTop";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import RevealEffect from "@/components/RevealEffect";
+import FloatingAppCTA from "@/components/FloatingAppCTA";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -74,6 +75,7 @@ export default function RootLayout({
         {children}
         <Footer />
         <ScrollToTop />
+        <FloatingAppCTA />
       </body>
     </html>
   );

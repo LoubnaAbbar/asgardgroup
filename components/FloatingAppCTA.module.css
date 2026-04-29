@@ -1,0 +1,218 @@
+/* ─── CTA principal ─── */
+.cta {
+  position: fixed;
+  bottom: 24px;
+  right: 24px;
+  z-index: 1000;
+
+  display: flex;
+  align-items: center;
+  gap: 12px;
+
+  background: linear-gradient(135deg, #0d2f54 0%, #1a4a7e 100%);
+  color: #ffffff;
+  padding: 12px 20px 12px 16px;
+  border-radius: 50px;
+
+  text-decoration: none;
+  font-family: var(--font-inter), system-ui, sans-serif;
+
+  box-shadow:
+    0 10px 30px rgba(13, 47, 84, 0.35),
+    0 4px 12px rgba(13, 47, 84, 0.2);
+
+  /* Animation d'apparition */
+  opacity: 0;
+  transform: translateY(20px) scale(0.9);
+  transition: opacity 0.5s ease, transform 0.5s cubic-bezier(0.34, 1.56, 0.64, 1);
+
+  cursor: pointer;
+}
+
+.cta.visible {
+  opacity: 1;
+  transform: translateY(0) scale(1);
+
+  /* Pulsation discrète après l'apparition */
+  animation: subtlePulse 3s ease-in-out 1s infinite;
+}
+
+.cta:hover {
+  transform: translateY(-4px) scale(1.03);
+  box-shadow:
+    0 15px 40px rgba(13, 47, 84, 0.45),
+    0 6px 16px rgba(13, 47, 84, 0.25);
+  animation: none;
+}
+
+/* ─── Icône SVG ─── */
+.icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #ffffff;
+  flex-shrink: 0;
+}
+
+.icon svg {
+  width: 22px;
+  height: 22px;
+  display: block;
+}
+
+/* ─── Textes ─── */
+.textes {
+  display: flex;
+  flex-direction: column;
+  line-height: 1.2;
+}
+
+.titre {
+  font-size: 0.85rem;
+  font-weight: 700;
+  letter-spacing: 0.3px;
+}
+
+.sousTitre {
+  font-size: 0.7rem;
+  opacity: 0.85;
+  letter-spacing: 0.2px;
+}
+
+/* ─── Flèche ─── */
+.fleche {
+  font-size: 0.95rem;
+  font-weight: bold;
+  margin-left: 4px;
+  transition: transform 0.3s ease;
+}
+
+.cta:hover .fleche {
+  transform: translateX(4px);
+}
+
+/* ─── Bouton fermer ─── */
+.closeButton {
+  position: absolute;
+  top: -6px;
+  right: -6px;
+
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+
+  background: #ffffff;
+  color: #0d2f54;
+  border: none;
+
+  font-size: 16px;
+  font-weight: bold;
+  line-height: 1;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  cursor: pointer;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+
+  opacity: 0;
+  transform: scale(0.8);
+  transition: opacity 0.2s, transform 0.2s, background 0.2s;
+}
+
+.cta:hover .closeButton {
+  opacity: 1;
+  transform: scale(1);
+}
+
+.closeButton:hover {
+  background: #d63031;
+  color: #ffffff;
+}
+
+/* ─── Pulsation discrète ─── */
+@keyframes subtlePulse {
+  0%, 100% {
+    box-shadow:
+      0 10px 30px rgba(13, 47, 84, 0.35),
+      0 4px 12px rgba(13, 47, 84, 0.2),
+      0 0 0 0 rgba(33, 150, 196, 0.4);
+  }
+  50% {
+    box-shadow:
+      0 10px 30px rgba(13, 47, 84, 0.35),
+      0 4px 12px rgba(13, 47, 84, 0.2),
+      0 0 0 8px rgba(33, 150, 196, 0);
+  }
+}
+
+/* ─── Responsive : version compacte sur mobile ─── */
+@media (max-width: 600px) {
+  .cta {
+    bottom: 16px;
+    right: 16px;
+    padding: 12px 16px 12px 14px;
+  }
+
+  .titre {
+    font-size: 0.8rem;
+  }
+
+  .sousTitre {
+    font-size: 0.65rem;
+  }
+
+  .icon svg {
+    width: 20px;
+    height: 20px;
+  }
+
+  /* Sur mobile, toujours afficher le bouton fermer (pas de hover) */
+  .closeButton {
+    opacity: 1;
+    transform: scale(1);
+    width: 24px;
+    height: 24px;
+  }
+}
+
+/* ─── Sur très petit écran : version mini (juste icône) ─── */
+@media (max-width: 380px) {
+  .textes {
+    display: none;
+  }
+
+  .fleche {
+    display: none;
+  }
+
+  .cta {
+    padding: 14px;
+    border-radius: 50%;
+  }
+
+  .icon svg {
+    width: 24px;
+    height: 24px;
+  }
+}
+
+/* ─── Préférence utilisateur : pas d'animations ─── */
+@media (prefers-reduced-motion: reduce) {
+  .cta {
+    transition: opacity 0.3s ease;
+    transform: none;
+    animation: none;
+  }
+
+  .cta.visible {
+    transform: none;
+    animation: none;
+  }
+
+  .cta:hover {
+    transform: none;
+    animation: none;
+  }
+}
