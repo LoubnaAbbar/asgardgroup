@@ -1,37 +1,49 @@
-/* ═══════════════════════════════════════════
-   POLITIQUE DE CONFIDENTIALITÉ
-   Styles identiques aux mentions légales pour cohérence.
-   ═══════════════════════════════════════════ */
+/* ═══════════════════════════════════════════════════════════
+   POLITIQUE DE CONFIDENTIALITÉ — ASGARD GROUP
+   Format paysage : container large, en-tête 2 colonnes,
+   grille 2 colonnes pour les sections.
+   ═══════════════════════════════════════════════════════════ */
 
 .legal {
   width: 100%;
   min-height: 100vh;
-  padding: calc(84px + 4rem) var(--section-pad-h) var(--section-pad-v);
+  padding: calc(84px + 3rem) clamp(1.5rem, 4vw, 4rem) 4rem;
   background: var(--fond);
   color: var(--texte);
   font-family: var(--font-inter), sans-serif;
-  line-height: 1.75;
+  line-height: 1.7;
   position: relative;
   z-index: 1;
 }
 
 .container {
-  max-width: 880px;
+  max-width: 1400px;
   margin: 0 auto;
 }
 
-/* ─── En-tête de page ─── */
+/* ─────────────── EN-TÊTE PAYSAGE 2 COLONNES ─────────────── */
 .header {
-  margin-bottom: 3.5rem;
+  display: grid;
+  grid-template-columns: 1fr 1.2fr;
+  gap: 3rem;
+  align-items: end;
+  margin-bottom: 2.5rem;
+  padding-bottom: 2rem;
+  border-bottom: 1px solid var(--bordure);
+}
+
+.headerLeft {
+  display: flex;
+  flex-direction: column;
 }
 
 .tag {
   font-size: 0.75rem;
   font-weight: 600;
-  letter-spacing: 0.12em;
+  letter-spacing: 0.14em;
   text-transform: uppercase;
   color: var(--bleu-vif);
-  margin-bottom: 1.25rem;
+  margin-bottom: 1rem;
   display: flex;
   align-items: center;
   gap: 0.7rem;
@@ -40,7 +52,7 @@
 .tag::before {
   content: "";
   display: inline-block;
-  width: 24px;
+  width: 28px;
   height: 2px;
   background: var(--bleu-vif);
   border-radius: 2px;
@@ -49,12 +61,12 @@
 
 .header h1 {
   font-family: var(--font-montserrat), sans-serif;
-  font-size: clamp(2rem, 4.5vw, 3.25rem);
+  font-size: clamp(2rem, 5vw, 3.5rem);
   font-weight: 900;
-  line-height: 1.06;
+  line-height: 1.05;
   letter-spacing: -0.03em;
   color: var(--texte);
-  margin: 0 0 1.5rem 0;
+  margin: 0;
 }
 
 .header h1 em {
@@ -62,68 +74,107 @@
   font-style: normal;
 }
 
-.subtitle {
-  font-size: clamp(0.9375rem, 2vw, 1.0625rem);
-  line-height: 1.75;
-  color: var(--texte-2);
-  margin: 0;
-  max-width: 720px;
+.headerRight {
+  padding-left: 2rem;
+  border-left: 2px solid var(--bleu-vif);
 }
 
-/* ─── Sections ─── */
+.subtitle {
+  font-size: clamp(0.9375rem, 1.5vw, 1.0625rem);
+  line-height: 1.75;
+  color: var(--texte-2);
+  margin: 0 0 1.25rem 0;
+}
+
+.meta {
+  font-size: 0.8125rem;
+  color: var(--texte-3);
+}
+
+.meta strong {
+  color: var(--texte);
+  font-weight: 600;
+  margin-right: 0.35rem;
+}
+
+/* ─────────────── GRILLE 2 COLONNES ─────────────── */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.25rem;
+  margin-bottom: 2rem;
+}
+
+/* ─────────────── SECTIONS ─────────────── */
 .section {
   background: var(--blanc);
   border: 1px solid var(--bordure);
   border-radius: var(--radius-lg);
-  padding: 2.25rem 2.5rem;
-  box-shadow: var(--ombre-md);
-  margin-bottom: 1.5rem;
-  transition: box-shadow 0.25s, border-color 0.25s;
+  padding: 1.75rem 2rem;
+  box-shadow: var(--ombre-sm);
+  transition: box-shadow 0.25s, border-color 0.25s, transform 0.25s;
+  display: flex;
+  flex-direction: column;
 }
 
 .section:hover {
-  box-shadow: var(--ombre-lg);
+  box-shadow: var(--ombre-md);
   border-color: var(--bleu-bordure);
+  transform: translateY(-2px);
 }
 
 .section h2 {
   font-family: var(--font-montserrat), sans-serif;
-  font-size: clamp(1.25rem, 2.5vw, 1.5rem);
+  font-size: 1.125rem;
   font-weight: 800;
-  line-height: 1.2;
-  letter-spacing: -0.02em;
+  line-height: 1.3;
+  letter-spacing: -0.01em;
   color: var(--texte);
-  margin: 0 0 1.5rem 0;
-  padding-bottom: 0.875rem;
+  margin: 0 0 1.25rem 0;
+  padding-bottom: 0.85rem;
   border-bottom: 2px solid var(--bleu-vif);
-  display: inline-block;
+  display: flex;
+  align-items: center;
+  gap: 0.85rem;
 }
 
-.section h3 {
+.num {
   font-family: var(--font-montserrat), sans-serif;
-  font-size: 1.0625rem;
+  font-size: 0.75rem;
   font-weight: 700;
-  color: var(--texte);
-  margin: 1.75rem 0 0.75rem 0;
-  letter-spacing: -0.01em;
+  letter-spacing: 0.1em;
+  color: #fff;
+  background: var(--bleu-vif);
+  padding: 0.3rem 0.6rem;
+  border-radius: var(--radius-sm);
+  flex-shrink: 0;
 }
 
 .section p {
-  margin: 0 0 1rem 0;
-  font-size: 0.9875rem;
+  margin: 0 0 0.85rem 0;
+  font-size: 0.9rem;
   color: var(--texte-2);
-  line-height: 1.8;
+  line-height: 1.7;
 }
 
 .section p:last-child {
   margin-bottom: 0;
 }
 
-/* ─── Encart d'informations clés ─── */
+.note {
+  font-size: 0.8125rem !important;
+  color: var(--texte-3) !important;
+  font-style: italic;
+  padding-top: 0.75rem;
+  margin-top: 0.5rem !important;
+  border-top: 1px dashed var(--bordure);
+}
+
+/* ─────────────── ENCART D'INFOS ─────────────── */
 .infoList {
   list-style: none;
-  padding: 1.5rem 1.75rem;
-  margin: 0 0 1rem 0;
+  padding: 1rem 1.25rem;
+  margin: 0;
   background: var(--fond);
   border: 1px solid var(--bordure);
   border-left: 3px solid var(--bleu-vif);
@@ -131,10 +182,11 @@
 }
 
 .infoList li {
-  padding: 0.5rem 0;
-  font-size: 0.9375rem;
+  padding: 0.4rem 0;
+  font-size: 0.875rem;
   color: var(--texte-2);
   border-bottom: 1px solid var(--bordure);
+  line-height: 1.5;
 }
 
 .infoList li:last-child {
@@ -147,9 +199,9 @@
   margin-right: 0.35rem;
 }
 
-/* ─── Liste à puces ─── */
+/* ─────────────── LISTES À PUCES ─────────────── */
 .bulletList {
-  margin: 0 0 1rem 0;
+  margin: 0 0 0.85rem 0;
   padding: 0;
   list-style: none;
   color: var(--texte-2);
@@ -157,18 +209,18 @@
 
 .bulletList li {
   position: relative;
-  padding: 0.35rem 0 0.35rem 1.5rem;
-  font-size: 0.9375rem;
-  line-height: 1.7;
+  padding: 0.3rem 0 0.3rem 1.25rem;
+  font-size: 0.875rem;
+  line-height: 1.6;
 }
 
 .bulletList li::before {
   content: "";
   position: absolute;
   left: 0;
-  top: 0.85rem;
-  width: 6px;
-  height: 6px;
+  top: 0.7rem;
+  width: 5px;
+  height: 5px;
   background: var(--bleu-vif);
   border-radius: 50%;
 }
@@ -178,64 +230,68 @@
   font-weight: 600;
 }
 
-/* ─── Placeholder ─── */
+/* ─────────────── PLACEHOLDER ─────────────── */
 .placeholder {
   display: inline-block;
-  padding: 0.2rem 0.55rem;
-  background: #fff3cd;
-  color: #7a5a00;
+  padding: 0.15rem 0.5rem;
+  background: #fff8e1;
+  color: #6d4c00;
   border: 1px dashed #d4a017;
   border-radius: var(--radius-sm);
   font-family: "JetBrains Mono", "Courier New", monospace;
-  font-size: 0.8125rem;
+  font-size: 0.75rem;
   font-weight: 500;
 }
 
-/* ─── Date de mise à jour ─── */
-.updated {
-  margin-top: 2.5rem;
-  padding: 1.25rem 1.5rem;
+/* ─────────────── PIED DE PAGE ─────────────── */
+.footer {
+  padding: 1.5rem 2rem;
   background: var(--blanc);
   border: 1px solid var(--bordure);
   border-radius: var(--radius-md);
   box-shadow: var(--ombre-sm);
-  font-size: 0.875rem;
-  color: var(--texte-3);
   text-align: center;
 }
 
-/* ═══════════════════════════════════════════
+.footer p {
+  margin: 0;
+  font-size: 0.8125rem;
+  color: var(--texte-3);
+  font-style: italic;
+  line-height: 1.6;
+}
+
+/* ═══════════════════════════════════════════════════════════
    RESPONSIVE
-   ═══════════════════════════════════════════ */
-@media (max-width: 900px) {
-  .legal {
-    padding: calc(72px + 2.5rem) 1.5rem 4rem;
+   ═══════════════════════════════════════════════════════════ */
+@media (max-width: 1024px) {
+  .header {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+    align-items: start;
   }
 
-  .section {
-    padding: 1.75rem 1.75rem;
-  }
-
-  .infoList {
-    padding: 1.25rem 1.5rem;
+  .headerRight {
+    padding-left: 1.25rem;
+    border-left-width: 3px;
   }
 }
 
-@media (max-width: 640px) {
+@media (max-width: 768px) {
   .legal {
     padding: calc(72px + 2rem) 1rem 3rem;
   }
 
+  .grid {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+
   .section {
     padding: 1.5rem 1.25rem;
-    margin-bottom: 1rem;
   }
 
-  .infoList {
-    padding: 1rem 1.25rem;
-  }
-
-  .updated {
-    padding: 1rem 1.25rem;
+  .footer {
+    padding: 1.25rem 1.25rem;
   }
 }

@@ -2,274 +2,159 @@ import type { Metadata } from "next";
 import styles from "./politique-de-confidentialite.module.css";
 
 export const metadata: Metadata = {
-  title: "Politique de confidentialité",
+  title: "Politique de confidentialité | ASGARD GROUP",
   description:
-    "Politique de confidentialité : traitement des données personnelles collectées via les formulaires de contact et de demande de devis.",
+    "Politique de confidentialité d'ASGARD GROUP SAS — traitement des données personnelles conformément au RGPD.",
+  robots: { index: true, follow: true },
 };
 
 export default function PolitiqueConfidentialitePage() {
   return (
     <main className={styles.legal}>
       <div className={styles.container}>
+        {/* ═══════════════ EN-TÊTE ═══════════════ */}
         <header className={styles.header}>
-          <div className={styles.tag}>Protection des données</div>
-          <h1>
-            Politique de <em>confidentialité</em>
-          </h1>
-          <p className={styles.subtitle}>
-            La présente politique de confidentialité a pour objet d’informer
-            les utilisateurs du site sur la manière dont leurs données à
-            caractère personnel sont collectées et traitées, conformément au
-            Règlement (UE) 2016/679 du 27 avril 2016 (RGPD) et à la loi
-            n° 78-17 du 6 janvier 1978 modifiée, dite « Informatique et
-            Libertés ».
-          </p>
+          <div className={styles.headerLeft}>
+            <div className={styles.tag}>Protection des données</div>
+            <h1>
+              Politique de <em>confidentialité</em>
+            </h1>
+          </div>
+          <div className={styles.headerRight}>
+            <p className={styles.subtitle}>
+              ASGARD GROUP SAS s’engage à protéger les données personnelles
+              des utilisateurs de son site, conformément au RGPD et à la loi
+              « Informatique et Libertés » du 6 janvier 1978 modifiée.
+            </p>
+            <div className={styles.meta}>
+              <span><strong>Mise à jour&nbsp;:</strong> 30 avril 2026</span>
+            </div>
+          </div>
         </header>
 
-        <section className={styles.section}>
-          <h2>1. Responsable du traitement</h2>
-          <p>
-            Le responsable du traitement des données à caractère personnel
-            collectées sur le site est&nbsp;:
-          </p>
-          <ul className={styles.infoList}>
-            <li>
-              <strong>Raison sociale&nbsp;:</strong>{" "}
-              <span className={styles.placeholder}>[RAISON SOCIALE — À COMPLÉTER]</span>
-            </li>
-            <li>
-              <strong>Adresse&nbsp;:</strong>{" "}
-              <span className={styles.placeholder}>[ADRESSE DU SIÈGE — À COMPLÉTER]</span>
-            </li>
-            <li>
-              <strong>Courriel&nbsp;:</strong>{" "}
-              <span className={styles.placeholder}>[ADRESSE E-MAIL DE CONTACT — À COMPLÉTER]</span>
-            </li>
-            <li>
-              <strong>Téléphone&nbsp;:</strong>{" "}
-              <span className={styles.placeholder}>[NUMÉRO DE TÉLÉPHONE — À COMPLÉTER]</span>
-            </li>
-          </ul>
-        </section>
+        {/* ═══════════════ GRILLE PAYSAGE ═══════════════ */}
+        <div className={styles.grid}>
 
-        <section className={styles.section}>
-          <h2>2. Données collectées</h2>
-          <p>
-            Les données à caractère personnel sont collectées uniquement lorsque
-            l’utilisateur les fournit volontairement, notamment via les
-            formulaires présents sur le site.
-          </p>
+          {/* ─── 1. Responsable du traitement ─── */}
+          <section className={styles.section}>
+            <h2><span className={styles.num}>01</span>Responsable du traitement</h2>
+            <ul className={styles.infoList}>
+              <li><strong>Société&nbsp;:</strong> ASGARD GROUP SAS</li>
+              <li><strong>Siège&nbsp;:</strong> 44 chemin de la fossette, 93220 Gagny</li>
+              <li><strong>SIRET&nbsp;:</strong> 852 483 429 00035</li>
+              <li><strong>Courriel&nbsp;:</strong> contact@asgard-group.com</li>
+            </ul>
+          </section>
 
-          <h3>2.1 Formulaire de contact</h3>
-          <p>
-            Dans le cadre du formulaire de contact, les données susceptibles
-            d’être collectées sont&nbsp;:
-          </p>
-          <ul className={styles.bulletList}>
-            <li>nom et prénom&nbsp;;</li>
-            <li>adresse e-mail&nbsp;;</li>
-            <li>numéro de téléphone (facultatif)&nbsp;;</li>
-            <li>société (le cas échéant)&nbsp;;</li>
-            <li>objet et contenu du message.</li>
-          </ul>
+          {/* ─── 2. Données collectées ─── */}
+          <section className={styles.section}>
+            <h2><span className={styles.num}>02</span>Données collectées</h2>
+            <p>
+              Les données ne sont collectées que lorsque l’utilisateur les
+              fournit volontairement via les formulaires du site&nbsp;:
+            </p>
+            <ul className={styles.bulletList}>
+              <li>nom, prénom, fonction&nbsp;;</li>
+              <li>adresse e-mail, numéro de téléphone&nbsp;;</li>
+              <li>société et coordonnées professionnelles&nbsp;;</li>
+              <li>contenu du message ou descriptif du projet&nbsp;;</li>
+              <li>pièces jointes éventuelles (plans, cahier des charges).</li>
+            </ul>
+          </section>
 
-          <h3>2.2 Formulaire de demande de devis</h3>
-          <p>
-            Dans le cadre d’une demande de devis, les données susceptibles
-            d’être collectées sont&nbsp;:
-          </p>
-          <ul className={styles.bulletList}>
-            <li>identité du demandeur (nom, prénom, fonction)&nbsp;;</li>
-            <li>coordonnées professionnelles (société, adresse, e-mail, téléphone)&nbsp;;</li>
-            <li>description du projet ou de la prestation sollicitée&nbsp;;</li>
-            <li>
-              pièces jointes éventuellement transmises par l’utilisateur
-              (plans, cahier des charges, photographies, documents techniques,
-              etc.).
-            </li>
-          </ul>
-          <p>
-            L’utilisateur est seul responsable du contenu des pièces jointes
-            qu’il transmet et s’engage à ne communiquer aucune donnée sensible
-            au sens de l’article 9 du RGPD, ni aucune donnée appartenant à des
-            tiers sans leur autorisation préalable.
-          </p>
-        </section>
+          {/* ─── 3. Finalités ─── */}
+          <section className={styles.section}>
+            <h2><span className={styles.num}>03</span>Finalités du traitement</h2>
+            <p>Les données sont utilisées pour&nbsp;:</p>
+            <ul className={styles.bulletList}>
+              <li>répondre aux demandes adressées via le formulaire de contact&nbsp;;</li>
+              <li>étudier les demandes de devis et établir des propositions&nbsp;;</li>
+              <li>assurer la gestion de la relation commerciale&nbsp;;</li>
+              <li>respecter les obligations légales et fiscales applicables.</li>
+            </ul>
+            <p className={styles.note}>
+              Bases légales&nbsp;: exécution de mesures précontractuelles, exécution
+              du contrat, obligation légale et intérêt légitime (art. 6 RGPD).
+            </p>
+          </section>
 
-        <section className={styles.section}>
-          <h2>3. Finalités et bases légales du traitement</h2>
-          <p>Les données collectées sont traitées aux finalités suivantes&nbsp;:</p>
-          <ul className={styles.bulletList}>
-            <li>
-              répondre aux demandes d’information adressées via le formulaire
-              de contact&nbsp;;
-            </li>
-            <li>
-              étudier les demandes de devis, établir une proposition commerciale
-              et, le cas échéant, exécuter la prestation&nbsp;;
-            </li>
-            <li>
-              assurer la gestion de la relation commerciale et le suivi des
-              échanges&nbsp;;
-            </li>
-            <li>
-              se conformer aux obligations légales, réglementaires et fiscales
-              applicables.
-            </li>
-          </ul>
-          <p>Les bases légales du traitement sont&nbsp;:</p>
-          <ul className={styles.bulletList}>
-            <li>
-              le consentement de l’utilisateur (article 6, §1, a) du RGPD), pour
-              l’envoi volontaire du formulaire&nbsp;;
-            </li>
-            <li>
-              l’exécution de mesures précontractuelles prises à la demande de
-              l’utilisateur (article 6, §1, b) du RGPD), pour le traitement
-              d’une demande de devis&nbsp;;
-            </li>
-            <li>
-              le respect d’une obligation légale (article 6, §1, c) du RGPD),
-              lorsque cela est requis&nbsp;;
-            </li>
-            <li>
-              l’intérêt légitime du responsable du traitement (article 6, §1, f)
-              du RGPD), pour la gestion de la relation commerciale.
-            </li>
-          </ul>
-        </section>
+          {/* ─── 4. Destinataires ─── */}
+          <section className={styles.section}>
+            <h2><span className={styles.num}>04</span>Destinataires</h2>
+            <p>
+              Les données sont destinées aux services internes habilités
+              d’ASGARD GROUP. Elles peuvent être communiquées à des
+              sous-traitants techniques (hébergeur, messagerie) agissant
+              sur instruction et dans le respect du RGPD.
+            </p>
+            <p>
+              <strong>Aucune donnée n’est cédée ni revendue</strong> à des tiers
+              à des fins commerciales.
+            </p>
+          </section>
 
-        <section className={styles.section}>
-          <h2>4. Destinataires des données</h2>
-          <p>
-            Les données collectées sont destinées aux services internes
-            habilités de l’éditeur chargés du traitement des demandes
-            commerciales et techniques.
-          </p>
-          <p>
-            Elles peuvent être transmises, dans la limite stricte de leurs
-            attributions, à des sous-traitants techniques (hébergeur,
-            prestataire de messagerie, éditeur d’outils de gestion), agissant
-            sur instruction du responsable du traitement et dans le respect
-            d’engagements contractuels de confidentialité conformes au RGPD.
-          </p>
-          <p>
-            Aucune donnée n’est cédée, louée ou revendue à des tiers à des fins
-            commerciales.
-          </p>
-        </section>
+          {/* ─── 5. Conservation ─── */}
+          <section className={styles.section}>
+            <h2><span className={styles.num}>05</span>Durée de conservation</h2>
+            <ul className={styles.bulletList}>
+              <li><strong>Demandes de contact&nbsp;:</strong> 3 ans à compter du dernier échange.</li>
+              <li><strong>Devis et pièces associées&nbsp;:</strong> durée de la relation commerciale, puis archivage 5 ans.</li>
+              <li><strong>Pièces comptables&nbsp;:</strong> 10 ans (art. L.123-22 du Code de commerce).</li>
+            </ul>
+          </section>
 
-        <section className={styles.section}>
-          <h2>5. Durée de conservation</h2>
-          <ul className={styles.bulletList}>
-            <li>
-              <strong>Demandes via le formulaire de contact&nbsp;:</strong>{" "}
-              conservées pendant la durée nécessaire au traitement de la
-              demande, puis archivées ou supprimées dans un délai maximal de
-              trois (3) ans à compter du dernier contact.
-            </li>
-            <li>
-              <strong>Demandes de devis et pièces jointes associées&nbsp;:</strong>{" "}
-              conservées pendant la durée de la relation commerciale, puis
-              archivées conformément aux obligations légales et fiscales
-              applicables (notamment dix (10) ans pour les pièces comptables).
-            </li>
-            <li>
-              <strong>Données traitées pour répondre à une obligation légale&nbsp;:</strong>{" "}
-              conservées pendant la durée prévue par la réglementation
-              applicable.
-            </li>
-          </ul>
-        </section>
+          {/* ─── 6. Sécurité ─── */}
+          <section className={styles.section}>
+            <h2><span className={styles.num}>06</span>Sécurité</h2>
+            <p>
+              ASGARD GROUP met en œuvre les mesures techniques et
+              organisationnelles appropriées pour garantir la sécurité,
+              l’intégrité et la confidentialité des données&nbsp;: chiffrement
+              des communications, contrôle d’accès, sauvegardes régulières.
+            </p>
+          </section>
 
-        <section className={styles.section}>
-          <h2>6. Sécurité</h2>
-          <p>
-            L’éditeur met en œuvre les mesures techniques et organisationnelles
-            appropriées afin de garantir la sécurité, l’intégrité et la
-            confidentialité des données personnelles collectées, et notamment
-            de prévenir toute altération, perte ou accès non autorisé.
-          </p>
-          <p>
-            Les pièces jointes transmises via le formulaire de devis sont
-            conservées sur des serveurs sécurisés et leur accès est strictement
-            limité aux personnes habilitées.
-          </p>
-        </section>
+          {/* ─── 7. Droits ─── */}
+          <section className={styles.section}>
+            <h2><span className={styles.num}>07</span>Droits des utilisateurs</h2>
+            <p>
+              Conformément aux articles 15 à 22 du RGPD, vous disposez des
+              droits suivants&nbsp;: accès, rectification, effacement, limitation,
+              opposition, portabilité, retrait du consentement.
+            </p>
+            <p>
+              Pour les exercer, adressez votre demande accompagnée d’un
+              justificatif d’identité à&nbsp;:{" "}
+              <span>contact@asgard-group.com</span>.
+            </p>
+            <p className={styles.note}>
+              En cas de difficulté, vous pouvez introduire une réclamation
+              auprès de la CNIL (www.cnil.fr).
+            </p>
+          </section>
 
-        <section className={styles.section}>
-          <h2>7. Droits des personnes concernées</h2>
-          <p>
-            Conformément au RGPD et à la loi « Informatique et Libertés »,
-            l’utilisateur dispose, sur ses données à caractère personnel, des
-            droits suivants&nbsp;:
-          </p>
-          <ul className={styles.bulletList}>
-            <li>droit d’accès&nbsp;;</li>
-            <li>droit de rectification&nbsp;;</li>
-            <li>droit à l’effacement&nbsp;;</li>
-            <li>droit à la limitation du traitement&nbsp;;</li>
-            <li>droit d’opposition&nbsp;;</li>
-            <li>droit à la portabilité des données&nbsp;;</li>
-            <li>
-              droit de définir des directives relatives au sort de ses données
-              après son décès&nbsp;;
-            </li>
-            <li>droit de retirer son consentement à tout moment.</li>
-          </ul>
-          <p>
-            Ces droits peuvent être exercés en adressant une demande, accompagnée
-            d’un justificatif d’identité, à&nbsp;:
-          </p>
-          <ul className={styles.infoList}>
-            <li>
-              <strong>Par courriel&nbsp;:</strong>{" "}
-              <span className={styles.placeholder}>[ADRESSE E-MAIL DÉDIÉE — À COMPLÉTER]</span>
-            </li>
-            <li>
-              <strong>Par courrier postal&nbsp;:</strong>{" "}
-              <span className={styles.placeholder}>[ADRESSE POSTALE — À COMPLÉTER]</span>
-            </li>
-          </ul>
-          <p>
-            L’utilisateur dispose également du droit d’introduire une
-            réclamation auprès de la Commission nationale de l’informatique et
-            des libertés (CNIL), 3 Place de Fontenoy, TSA 80715, 75334 Paris
-            Cedex 07 — www.cnil.fr.
-          </p>
-        </section>
+          {/* ─── 8. Cookies ─── */}
+          <section className={styles.section}>
+            <h2><span className={styles.num}>08</span>Cookies</h2>
+            <p>
+              Le site est susceptible d’utiliser des cookies nécessaires à son
+              fonctionnement. Les cookies non essentiels ne sont déposés
+              qu’après recueil du consentement de l’utilisateur, qui peut le
+              modifier à tout moment via les paramètres de son navigateur.
+            </p>
+          </section>
 
-        <section className={styles.section}>
-          <h2>8. Cookies</h2>
-          <p>
-            Le site peut être amené à utiliser des cookies ou traceurs pour
-            assurer son bon fonctionnement et, le cas échéant, mesurer son
-            audience. L’utilisateur est informé de la présence éventuelle de
-            ces cookies lors de sa première visite et peut, à tout moment,
-            modifier ses préférences ou les désactiver via les paramètres de
-            son navigateur.
-          </p>
-          <p className={styles.placeholder}>
-            [PRÉCISER ICI LES COOKIES EFFECTIVEMENT UTILISÉS : NATURE, FINALITÉ,
-            DURÉE DE CONSERVATION — À COMPLÉTER]
-          </p>
-        </section>
+        </div>
 
-        <section className={styles.section}>
-          <h2>9. Modification de la politique de confidentialité</h2>
+        {/* ═══════════════ PIED ═══════════════ */}
+        <footer className={styles.footer}>
           <p>
-            L’éditeur se réserve le droit de modifier à tout moment la présente
-            politique de confidentialité, notamment afin de l’adapter à toute
-            évolution légale, réglementaire, jurisprudentielle ou technique.
-            La version applicable est celle en vigueur à la date de consultation
-            du site.
+            ASGARD GROUP se réserve le droit de modifier la présente politique
+            à tout moment afin de l’adapter aux évolutions légales et
+            réglementaires. La version applicable est celle en vigueur à la
+            date de consultation.
           </p>
-        </section>
-
-        <p className={styles.updated}>
-          Dernière mise à jour&nbsp;:{" "}
-          <span className={styles.placeholder}>[DATE DE MISE À JOUR — À COMPLÉTER]</span>
-        </p>
+        </footer>
       </div>
     </main>
   );
