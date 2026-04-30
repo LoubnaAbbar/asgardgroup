@@ -440,8 +440,8 @@ export default function ReferencesSection() {
           { src: "/images/refs/idf.png",      alt: "Région IDF" },
           { src: "/images/refs/ratp.png",     alt: "RATP"       },
           { src: "/images/refs/acms.png",     alt: "ACMS"       },
-          { src: "/images/refs/prodef.png",   alt: "PRODEF"     },
-          { src: "/images/refs/gecina.png",   alt: "GECINA"     },
+          { src: "/images/refs/prodef.jpg",   alt: "PRODEF"     },
+          { src: "/images/refs/gecina.jpg",   alt: "GECINA"     },
         ].map(({ src, alt }) => (
           <div key={alt} className="client-logo">
             <img src={src} alt={alt} />
